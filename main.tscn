@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://dnshor2biv22b"]
+[gd_scene load_steps=2 format=3 uid="uid://dnshor2biv22b"]
+
+[ext_resource type="PackedScene" uid="uid://cspe43pr2dloh" path="res://entities/player.tscn" id="1_vysco"]
 
 [node name="main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_vysco")]
