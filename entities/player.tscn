@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cspe43pr2dloh"]
+[gd_scene load_steps=4 format=3 uid="uid://cspe43pr2dloh"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_7rsnq"]
+[ext_resource type="Texture2D" uid="uid://ce2nku57ley0e" path="res://sprites/icon.svg" id="1_je5dc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p30i6"]
+radius = 63.0
+height = 126.0
 
-[node name="Player" type="Sprite2D"]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_7rsnq")
+metadata/_edit_group_ = true
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="Sprite2D" parent="."]
+texture = ExtResource("1_je5dc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_p30i6")
