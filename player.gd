@@ -5,15 +5,17 @@ extends CharacterBody2D
 enum Face { LEFT, RIGHT }
 enum State { IDLE, WALK, FORAGE, USE }
 
+@export var speed: int = 50
+@export var bag: Bag
+@export var farm: Farm
+
 @onready var col: CollisionShape2D = $collider
 @onready var sprite: AnimatedSprite2D = $sprite
 @onready var zone: Area2D = $interact_zone
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var hoe: Hoe = $hoe
-@onready var guide: Sprite2D = $plot
+@onready var guide: Node2D = $guide
 
-@export var speed: int = 50
-@export var bag: Bag
 
 var state: State = State.IDLE
 var facing: Face = Face.RIGHT
@@ -21,10 +23,12 @@ var facing: Face = Face.RIGHT
 var timer: float = 0
 var step_time: float = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	if bag == null:
-		bag = $bag
+	if farm is Farm:
+		print("FARM IS FARM!")
+	else:
+		print("farm isn't Farm")
+	# assert(farm is Farm, "farm must be of class Farm")
 
 
 func interact():
@@ -45,27 +49,27 @@ func handle_anim():
 func get_plot_pos() -> Vector2:
 	var mouse_pos := get_global_mouse_position()
 	var diff := (global_position - mouse_pos).normalized()
-	var snap_pos := Vector2i(1, 0)
+	var snap_pos := Vector2(1, 0)
 
 	var snapped_angle: float = round(diff.angle()/(PI/4))*(PI/4)
 	if snapped_angle == 0 or snapped_angle == 2*PI:
-		snap_pos = Vector2i(-1, 0)
+		snap_pos = Vector2(-1, 0)
 	if snapped_angle == PI/4:
-		snap_pos = Vector2i(-1, -1)
+		snap_pos = Vector2(-1, -1)
 	if snapped_angle == PI/2:
-		snap_pos = Vector2i(0, -1)
+		snap_pos = Vector2(0, -1)
 	if snapped_angle == 3*PI/4:
-		snap_pos = Vector2i(1, -1)
+		snap_pos = Vector2(1, -1)
 	if abs(snapped_angle) == PI:
-		snap_pos = Vector2i(1, 0)
+		snap_pos = Vector2(1, 0)
 	if snapped_angle == -3*PI/4:
-		snap_pos = Vector2i(1, 1)
+		snap_pos = Vector2(1, 1)
 	if snapped_angle == -PI/2:
-		snap_pos = Vector2i(0, 1)
+		snap_pos = Vector2(0, 1)
 	if snapped_angle == -PI/4:
-		snap_pos = Vector2i(-1, 1)
+		snap_pos = Vector2(-1, 1)
 
-	return (Vector2i(position / 16) + snap_pos) * 16 + Vector2i(8, 8)
+	return (Vector2(round(position.x / 16), round(position.y / 16)) + snap_pos) * 16
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -100,10 +104,8 @@ func _process(dt: float) -> void:
 		interact()
 
 	if Input.is_action_just_pressed("use"):
-		var new_plot = guide.duplicate()
-		get_parent().add_child(new_plot)
-		new_plot.position = get_plot_pos()
-		hoe.swing()
+		if farm.till_plot(get_plot_pos()):
+			hoe.swing()
 
 	# normalize diagonal speeds
 	var mag = velocity.length()

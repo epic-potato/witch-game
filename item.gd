@@ -1,6 +1,7 @@
-class_name Interactable
+class_name Item
 
-extends Area2D
+extends Resource
 
-func interact(_player: Player) -> void:
-	pass
+@export var name: String
+@export var scene: PackedScene
+var count: int = 0

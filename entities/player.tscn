@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://bag.gd" id="3_lago7"]
 [ext_resource type="AudioStream" uid="uid://b1kbau4juy3v8" path="res://sounds/rustle.wav" id="4_o5xm2"]
 [ext_resource type="PackedScene" uid="uid://c5y2ju226jk5a" path="res://entities/hoe.tscn" id="5_f1rkh"]
-[ext_resource type="Texture2D" uid="uid://c2prenileh5gl" path="res://entities/tilled_dirt_and_planting_holes.png" id="6_0cs6p"]
 [ext_resource type="Texture2D" uid="uid://bwi66xu7o7qbf" path="res://entities/witch_animations_v1.png" id="6_ba12g"]
+[ext_resource type="PackedScene" uid="uid://dcvend5fjs46k" path="res://entities/guide.tscn" id="6_t55h6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hmql"]
 atlas = ExtResource("6_ba12g")
@@ -360,25 +360,9 @@ height = 22.0
 radius = 17.0
 
 [node name="player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_d8h3g")
 metadata/_edit_group_ = true
-
-[node name="plot" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("6_0cs6p")
-metadata/_aseprite_wizard_config_ = {
-"i_mode": 1,
-"keep_anim_length": false,
-"layer": "",
-"o_ex_p": "",
-"o_folder": "",
-"o_name": "",
-"only_visible": false,
-"player": "",
-"slice": "",
-"source": "res://sprites/tilled_dirt_and_planting_holes.aseprite"
-}
-metadata/_aseprite_wizard_source_file_hash_ = "9d1e118bdf9fba91417f55ada8549aae"
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -417,3 +401,6 @@ stream = ExtResource("4_o5xm2")
 
 [node name="hoe" parent="." instance=ExtResource("5_f1rkh")]
 position = Vector2(-6, -6)
+
+[node name="guide" parent="." instance=ExtResource("6_t55h6")]
+y_sort_enabled = true

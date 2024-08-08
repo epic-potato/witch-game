@@ -1,6 +1,6 @@
 extends Interactable
 
-@export var item_name: String
+@export var item: Item
 @export var count: int
 
 func _ready():
@@ -9,6 +9,7 @@ func _ready():
 	var rng := RandomNumberGenerator.new()
 	sprite.frame = rng.randi_range(0, total_frames)
 
-func interact(player: Player) -> void:
-	player.bag.add(Bag.Item.new(item_name, count))
+func interact() -> Item:
+	item.count = count
 	self.queue_free()
+	return item
