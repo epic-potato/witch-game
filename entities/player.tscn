@@ -1,18 +1,57 @@
-[gd_scene load_steps=4 format=3 uid="uid://cspe43pr2dloh"]
+[gd_scene load_steps=8 format=3 uid="uid://cspe43pr2dloh"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_7rsnq"]
-[ext_resource type="Texture2D" uid="uid://ce2nku57ley0e" path="res://sprites/icon.svg" id="1_je5dc"]
+[ext_resource type="Script" path="res://player.gd" id="1_d8h3g"]
+[ext_resource type="Texture2D" uid="uid://0brca1ksldc0" path="res://entities/witch.png" id="2_1xd08"]
+[ext_resource type="Script" path="res://bag.gd" id="3_lago7"]
+[ext_resource type="AudioStream" uid="uid://b1kbau4juy3v8" path="res://sounds/rustle.wav" id="4_o5xm2"]
+[ext_resource type="PackedScene" uid="uid://c5y2ju226jk5a" path="res://entities/hoe.tscn" id="5_f1rkh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p30i6"]
-radius = 63.0
-height = 126.0
+radius = 6.0
+height = 22.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_7rsnq")
+[sub_resource type="CircleShape2D" id="CircleShape2D_qo587"]
+radius = 17.0
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_d8h3g")
 metadata/_edit_group_ = true
 
-[node name="Player" type="Sprite2D" parent="."]
-texture = ExtResource("1_je5dc")
+[node name="sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, -16)
+texture = ExtResource("2_1xd08")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://sprites/witch.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "7eb456271598a22dcd9d6f3034bb71a2"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_p30i6")
+
+[node name="interact_zone" type="Area2D" parent="."]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact_zone"]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_qo587")
+
+[node name="bag" type="Node" parent="."]
+script = ExtResource("3_lago7")
+stack_size = 4
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_o5xm2")
+
+[node name="hoe" parent="." instance=ExtResource("5_f1rkh")]
+position = Vector2(-6, -6)
