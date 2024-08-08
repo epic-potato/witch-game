@@ -6,10 +6,11 @@ enum Face { LEFT, RIGHT }
 enum State { IDLE, WALK, FORAGE, USE }
 
 @onready var col: CollisionShape2D = $collider
-@onready var sprite: Sprite2D = $sprite
+@onready var sprite: AnimatedSprite2D = $sprite
 @onready var zone: Area2D = $interact_zone
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var hoe: Hoe = $hoe
+@onready var guide: Sprite2D = $plot
 
 @export var speed: int = 50
 @export var bag: Bag
@@ -33,6 +34,39 @@ func interact():
 			state = State.FORAGE
 			item.interact(self)
 			return
+
+func handle_anim():
+	match state:
+		State.IDLE:
+			sprite.play("idle_look_up")
+		State.WALK:
+			sprite.play("idle_bounce")
+
+func get_plot_pos() -> Vector2:
+	var mouse_pos := get_global_mouse_position()
+	var diff := (global_position - mouse_pos).normalized()
+	var snap_pos := Vector2i(1, 0)
+
+	var snapped_angle: float = round(diff.angle()/(PI/4))*(PI/4)
+	if snapped_angle == 0 or snapped_angle == 2*PI:
+		snap_pos = Vector2i(-1, 0)
+	if snapped_angle == PI/4:
+		snap_pos = Vector2i(-1, -1)
+	if snapped_angle == PI/2:
+		snap_pos = Vector2i(0, -1)
+	if snapped_angle == 3*PI/4:
+		snap_pos = Vector2i(1, -1)
+	if abs(snapped_angle) == PI:
+		snap_pos = Vector2i(1, 0)
+	if snapped_angle == -3*PI/4:
+		snap_pos = Vector2i(1, 1)
+	if snapped_angle == -PI/2:
+		snap_pos = Vector2i(0, 1)
+	if snapped_angle == -PI/4:
+		snap_pos = Vector2i(-1, 1)
+
+	return (Vector2i(position / 16) + snap_pos) * 16 + Vector2i(8, 8)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(dt: float) -> void:
@@ -65,7 +99,10 @@ func _process(dt: float) -> void:
 	if Input.is_action_pressed("action"):
 		interact()
 
-	if Input.is_action_pressed("use"):
+	if Input.is_action_just_pressed("use"):
+		var new_plot = guide.duplicate()
+		get_parent().add_child(new_plot)
+		new_plot.position = get_plot_pos()
 		hoe.swing()
 
 	# normalize diagonal speeds
@@ -85,5 +122,7 @@ func _process(dt: float) -> void:
 			hoe.scale.x = 1
 			hoe.position.x = -6
 
+	handle_anim()
 	move_and_slide()
+	guide.global_position = get_plot_pos()
 

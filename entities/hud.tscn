@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://deps0s07644ar"]
+
+[ext_resource type="PackedScene" uid="uid://c5y2ju226jk5a" path="res://entities/hoe.tscn" id="1_uwjbs"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+follow_viewport_scale = 2.0
+
+[node name="hoe" parent="." instance=ExtResource("1_uwjbs")]
+position = Vector2(1874, 1027)
+scale = Vector2(6, 6)

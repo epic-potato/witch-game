@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c6dakuoo22c43" path="res://sprites/blocking_ts.png" id="5_fc8bn"]
 [ext_resource type="PackedScene" uid="uid://e2i5b6epgqkp" path="res://entities/red_cap.tscn" id="6_4p63c"]
 [ext_resource type="Script" path="res://audio_manager.gd" id="6_hl2jq"]
-[ext_resource type="PackedScene" uid="uid://c5y2ju226jk5a" path="res://entities/hoe.tscn" id="7_qmm6h"]
+[ext_resource type="PackedScene" uid="uid://deps0s07644ar" path="res://entities/hud.tscn" id="7_5j6ow"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6g6k"]
 texture = ExtResource("5_fc8bn")
@@ -132,9 +132,4 @@ position = Vector2(360, 336)
 [node name="audio_manager" type="Node2D" parent="."]
 script = ExtResource("6_hl2jq")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
-[node name="hoe" parent="CanvasLayer" instance=ExtResource("7_qmm6h")]
-position = Vector2(360, 251)
-scale = Vector2(2, 2)
+[node name="CanvasLayer" parent="." instance=ExtResource("7_5j6ow")]
