@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cej5vpgik3i65"
+path="res://.godot/imported/garlic_crop.aseprite-d11d9532143ffecf52f26b226b8cb39f.res"
+
+[deps]
+
+source_file="res://sprites/garlic_crop.aseprite"
+dest_files=["res://.godot/imported/garlic_crop.aseprite-d11d9532143ffecf52f26b226b8cb39f.res"]
+
+[params]
+

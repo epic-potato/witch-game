@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://m75xmd3iyth5"
+path="res://.godot/imported/blocking_ts.aseprite-6e861d54dea43bd682be6f0d3785616d.res"
+
+[deps]
+
+source_file="res://sprites/blocking_ts.aseprite"
+dest_files=["res://.godot/imported/blocking_ts.aseprite-6e861d54dea43bd682be6f0d3785616d.res"]
+
+[params]
+

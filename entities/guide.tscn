@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcvend5fjs46k"]
+
+[ext_resource type="Texture2D" uid="uid://dj77ugrl23lrk" path="res://entities/guide.png" id="1_t3l0a"]
+[ext_resource type="Texture2D" uid="uid://b531r3hk1e22p" path="res://textures/magic_05.png" id="2_v6vxw"]
+[ext_resource type="Texture2D" uid="uid://e1stlumv5t06" path="res://textures/star_09.png" id="3_l5vsm"]
+[ext_resource type="Texture2D" uid="uid://cq50k0x2qgcvj" path="res://textures/magic_04.png" id="4_c5pdp"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6rhnc"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ok64i"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_3tohr"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.0391677, 0.504284, 0.94492)
+colors = PackedColorArray(0.478167, 0.219016, 0.74653, 1, 0.933333, 0.305882, 0.639216, 1, 0.172549, 1, 1, 1)
+
+[node name="guide" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_6rhnc")
+texture = ExtResource("1_t3l0a")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://sprites/guide.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "49187bcd323c8438cabb1fa54cc2ae31"
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+y_sort_enabled = true
+material = SubResource("CanvasItemMaterial_ok64i")
+amount = 25
+texture = ExtResource("2_v6vxw")
+emission_shape = 3
+emission_rect_extents = Vector2(8, 8)
+direction = Vector2(0, -1)
+spread = 15.4
+gravity = Vector2(0, -5)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angular_velocity_min = 100.0
+angular_velocity_max = 100.0
+scale_amount_min = 0.0
+scale_amount_max = 0.01
+color = Color(0.862745, 0.458824, 1, 1)
+color_ramp = SubResource("Gradient_3tohr")
+hue_variation_min = 0.5
+hue_variation_max = 0.5
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+y_sort_enabled = true
+material = SubResource("CanvasItemMaterial_ok64i")
+amount = 25
+texture = ExtResource("3_l5vsm")
+emission_shape = 3
+emission_rect_extents = Vector2(8, 8)
+direction = Vector2(0, -1)
+spread = 15.4
+gravity = Vector2(0, -5)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angular_velocity_min = 100.0
+angular_velocity_max = 100.0
+scale_amount_min = 0.0
+scale_amount_max = 0.01
+color = Color(0.862745, 0.458824, 1, 1)
+color_ramp = SubResource("Gradient_3tohr")
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+y_sort_enabled = true
+material = SubResource("CanvasItemMaterial_ok64i")
+amount = 25
+texture = ExtResource("4_c5pdp")
+emission_shape = 3
+emission_rect_extents = Vector2(8, 8)
+direction = Vector2(0, -1)
+spread = 15.4
+gravity = Vector2(0, -5)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angular_velocity_min = 100.0
+angular_velocity_max = 100.0
+scale_amount_min = 0.0
+scale_amount_max = 0.01
+color = Color(0.862745, 0.458824, 1, 1)
+color_ramp = SubResource("Gradient_3tohr")

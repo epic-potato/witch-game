@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5y2ju226jk5a"]
+
+[ext_resource type="Texture2D" uid="uid://b0puf22m7r57k" path="res://Hoe.png" id="1_eajn1"]
+[ext_resource type="Script" path="res://hoe.gd" id="2_7lfyu"]
+
+[node name="hoe" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_eajn1")
+offset = Vector2(-6, -4)
+script = ExtResource("2_7lfyu")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://sprites/Hoe.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "9ce22eb1922a3918f788a861bec3652f"

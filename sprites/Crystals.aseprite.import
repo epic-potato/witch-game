@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b1pt7fq0q5qvv"
+path="res://.godot/imported/Crystals.aseprite-250442ee0968f1a32dff583aa9ee45e6.res"
+
+[deps]
+
+source_file="res://sprites/Crystals.aseprite"
+dest_files=["res://.godot/imported/Crystals.aseprite-250442ee0968f1a32dff583aa9ee45e6.res"]
+
+[params]
+

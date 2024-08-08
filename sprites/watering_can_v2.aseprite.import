@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dq24xv8q7b07u"
+path="res://.godot/imported/watering_can_v2.aseprite-be5c49dc58b97adc40ba4833f6aaf858.res"
+
+[deps]
+
+source_file="res://sprites/watering_can_v2.aseprite"
+dest_files=["res://.godot/imported/watering_can_v2.aseprite-be5c49dc58b97adc40ba4833f6aaf858.res"]
+
+[params]
+

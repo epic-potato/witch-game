@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dxlfcnx0uxwdr"
+path="res://.godot/imported/witch_animations_v1.aseprite-4c823d141822deb3b43183154186e313.res"
+
+[deps]
+
+source_file="res://sprites/witch_animations_v1.aseprite"
+dest_files=["res://.godot/imported/witch_animations_v1.aseprite-4c823d141822deb3b43183154186e313.res"]
+
+[params]
+

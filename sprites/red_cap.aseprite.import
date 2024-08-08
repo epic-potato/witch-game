@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cpndg86cj185k"
+path="res://.godot/imported/red_cap.aseprite-cbba2830b8ba183afc92c712ee03a7b3.res"
+
+[deps]
+
+source_file="res://sprites/red_cap.aseprite"
+dest_files=["res://.godot/imported/red_cap.aseprite-cbba2830b8ba183afc92c712ee03a7b3.res"]
+
+[params]
+

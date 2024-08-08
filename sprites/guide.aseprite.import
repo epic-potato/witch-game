@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d2svrukk4ctun"
+path="res://.godot/imported/guide.aseprite-d06ed89ea2137eab6aa22f9c0321a95c.res"
+
+[deps]
+
+source_file="res://sprites/guide.aseprite"
+dest_files=["res://.godot/imported/guide.aseprite-d06ed89ea2137eab6aa22f9c0321a95c.res"]
+
+[params]
+

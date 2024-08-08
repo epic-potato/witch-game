@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bgf0q0tjd8doa"
+path="res://.godot/imported/tilled_dirt_and_planting_holes.aseprite-e4b0f56171329c76457d06568b7eec29.res"
+
+[deps]
+
+source_file="res://sprites/tilled_dirt_and_planting_holes.aseprite"
+dest_files=["res://.godot/imported/tilled_dirt_and_planting_holes.aseprite-e4b0f56171329c76457d06568b7eec29.res"]
+
+[params]
+
