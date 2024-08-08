@@ -5,17 +5,15 @@ extends CharacterBody2D
 enum Face { LEFT, RIGHT }
 enum State { IDLE, WALK, FORAGE, USE }
 
-@export var speed: int = 50
-@export var bag: Bag
-@export var farm: Farm
-
 @onready var col: CollisionShape2D = $collider
 @onready var sprite: AnimatedSprite2D = $sprite
 @onready var zone: Area2D = $interact_zone
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var hoe: Hoe = $hoe
 @onready var guide: Node2D = $guide
+@onready var plot_scn := preload("res://entities/plot.tscn")
 
+@export var speed: int = 50
 
 var state: State = State.IDLE
 var facing: Face = Face.RIGHT
@@ -23,20 +21,24 @@ var facing: Face = Face.RIGHT
 var timer: float = 0
 var step_time: float = 0
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	if farm is Farm:
-		print("FARM IS FARM!")
-	else:
-		print("farm isn't Farm")
-	# assert(farm is Farm, "farm must be of class Farm")
+	pass
 
 
 func interact():
 	var items = zone.get_overlapping_areas()
 	for item in items:
 		if item.has_method("interact"):
-			state = State.FORAGE
-			item.interact(self)
+			var inter = item as Interact
+			var result := inter.interact()
+			match result.type:
+				Interact.Type.FORAGE:
+					state = State.FORAGE
+					print("Collecting: %s" % game.type_to_str(result.forage.type))
+					game.bag.add(result.forage)
+				_:
+					print("WTF")
 			return
 
 func handle_anim():
@@ -74,7 +76,7 @@ func get_plot_pos() -> Vector2:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(dt: float) -> void:
-	if state ==State.FORAGE:
+	if state == State.FORAGE:
 		timer += dt
 		if timer <= 1:
 			return
@@ -104,8 +106,8 @@ func _process(dt: float) -> void:
 		interact()
 
 	if Input.is_action_just_pressed("use"):
-		if farm.till_plot(get_plot_pos()):
-			hoe.swing()
+		game.farm.till_plot(get_plot_pos())
+		hoe.swing()
 
 	# normalize diagonal speeds
 	var mag = velocity.length()

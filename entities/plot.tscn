@@ -52,6 +52,7 @@ shape = SubResource("RectangleShape2D_eejnn")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_lux56")
 frame = 1
+speed_scale = 0.0
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",

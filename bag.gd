@@ -1,13 +1,21 @@
 class_name Bag
 
-extends Node
+extends Node 
+
+static func make(cap: int, stack: int) -> Bag:
+	var bag := Bag.new()
+	bag.capacity = cap
+	bag.stack_size = stack
+	bag._ready()
+
+	return bag
 
 class Item:
-	var name: String
+	var type: Game.Type
 	var count: int
 
-	func _init(p_name: String, p_count: int) -> void:
-		name = p_name
+	func _init(p_type: Game.Type, p_count: int) -> void:
+		type = p_type
 		count = p_count
 
 @export var capacity: int = 10
@@ -21,7 +29,7 @@ func _ready():
 
 func add(new_item: Item) -> bool:
 
-	print("Attempting to add %d %s" % [new_item.count, new_item.name])
+	print("ADDING ITEM")
 	var empty_idx = -1
 	for idx in items.size():
 		var item = items[idx]
@@ -32,7 +40,7 @@ func add(new_item: Item) -> bool:
 			continue
 
 		var available_space = stack_size - item.count
-		if item.name == new_item.name:
+		if item.type == new_item.type:
 			if available_space > new_item.count:
 				item.count += new_item.count
 				new_item.count = 0
@@ -44,7 +52,6 @@ func add(new_item: Item) -> bool:
 	if new_item.count > 0:
 		if empty_idx >= 0:
 			# if we aren't at capacity, then empty_idx MUST be a valid idx
-			print("Taking a slot")
 			items[empty_idx] = new_item
 		else:
 			return false

@@ -1,7 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://cspe43pr2dloh"]
+[gd_scene load_steps=30 format=3 uid="uid://cspe43pr2dloh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_d8h3g"]
-[ext_resource type="Script" path="res://bag.gd" id="3_lago7"]
 [ext_resource type="AudioStream" uid="uid://b1kbau4juy3v8" path="res://sounds/rustle.wav" id="4_o5xm2"]
 [ext_resource type="PackedScene" uid="uid://c5y2ju226jk5a" path="res://entities/hoe.tscn" id="5_f1rkh"]
 [ext_resource type="Texture2D" uid="uid://bwi66xu7o7qbf" path="res://entities/witch_animations_v1.png" id="6_ba12g"]
@@ -365,11 +364,12 @@ script = ExtResource("1_d8h3g")
 metadata/_edit_group_ = true
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 texture_filter = 1
-position = Vector2(2, -16)
 sprite_frames = SubResource("SpriteFrames_f0h0a")
 animation = &"idle_bounce"
 frame_progress = 0.0569328
+offset = Vector2(2, -16)
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
@@ -392,15 +392,11 @@ position = Vector2(0, -16)
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_qo587")
 
-[node name="bag" type="Node" parent="."]
-script = ExtResource("3_lago7")
-stack_size = 4
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_o5xm2")
 
 [node name="hoe" parent="." instance=ExtResource("5_f1rkh")]
+y_sort_enabled = true
 position = Vector2(-6, -6)
 
 [node name="guide" parent="." instance=ExtResource("6_t55h6")]
-y_sort_enabled = true

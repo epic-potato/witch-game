@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://vsmc2skb0mbv"]
-
-[ext_resource type="Script" path="res://entities/farm.gd" id="1_sejof"]
-
-[node name="farm" type="Node2D"]
-script = ExtResource("1_sejof")

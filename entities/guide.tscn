@@ -16,9 +16,10 @@ offsets = PackedFloat32Array(0.0391677, 0.504284, 0.94492)
 colors = PackedColorArray(0.478167, 0.219016, 0.74653, 1, 0.933333, 0.305882, 0.639216, 1, 0.172549, 1, 1, 1)
 
 [node name="guide" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
+y_sort_enabled = true
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_6rhnc")
 texture = ExtResource("1_t3l0a")
@@ -37,6 +38,7 @@ metadata/_aseprite_wizard_config_ = {
 metadata/_aseprite_wizard_source_file_hash_ = "49187bcd323c8438cabb1fa54cc2ae31"
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_ok64i")
 amount = 25
 texture = ExtResource("2_v6vxw")
@@ -57,6 +59,7 @@ hue_variation_min = 0.5
 hue_variation_max = 0.5
 
 [node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_ok64i")
 amount = 25
 texture = ExtResource("3_l5vsm")
@@ -75,6 +78,7 @@ color = Color(0.862745, 0.458824, 1, 1)
 color_ramp = SubResource("Gradient_3tohr")
 
 [node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+y_sort_enabled = true
 material = SubResource("CanvasItemMaterial_ok64i")
 amount = 25
 texture = ExtResource("4_c5pdp")

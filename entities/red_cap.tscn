@@ -36,8 +36,8 @@ animations = [{
 }]
 
 [node name="red_cap" type="Area2D"]
+y_sort_enabled = true
 script = ExtResource("1_1s41i")
-item_name = "red_cap"
 count = 1
 metadata/_edit_group_ = true
 
@@ -46,10 +46,11 @@ position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_yrx7p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 texture_filter = 1
-position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_e53x6")
 speed_scale = 0.0
+offset = Vector2(0, -8)
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
