@@ -2,13 +2,13 @@
 
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
-uid="uid://5kly5elry6p1"
-path="res://.godot/imported/Witch.aseprite-5b9932f5366a2c23d59ca4be4ddf425b.res"
+uid="uid://ds7vyp206s5jp"
+path="res://.godot/imported/witch.aseprite-c166ef621d9953f37957f79ec79ba7ba.res"
 
 [deps]
 
-source_file="res://sprites/Witch.aseprite"
-dest_files=["res://.godot/imported/Witch.aseprite-5b9932f5366a2c23d59ca4be4ddf425b.res"]
+source_file="res://sprites/witch.aseprite"
+dest_files=["res://.godot/imported/witch.aseprite-c166ef621d9953f37957f79ec79ba7ba.res"]
 
 [params]
 
