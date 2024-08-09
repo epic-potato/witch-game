@@ -5,6 +5,7 @@ extends Node
 enum Type {
 	RED_CAP,
 	GARLIC,
+	HOE,
 	END,
 }
 
@@ -37,7 +38,6 @@ func _ready() -> void:
 	items.resize(Type.END)
 	items[Type.RED_CAP] = Item.init(Type.RED_CAP, preload("res://entities/red_cap.tscn"))
 	items[Type.GARLIC] = Item.init(Type.GARLIC, preload("res://entities/garlic.tscn"))
-	call_deferred("_parent_farm", self)
 
 func set_farm(_farm: Farm) -> void:
 	if farm != null:

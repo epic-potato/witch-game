@@ -12,17 +12,20 @@ func _ready():
 	game.set_farm(self)
 
 
-func till_plot(pos: Vector2i) -> bool:
+func till_plot(pos: Vector2i) -> Plot:
 	if plots.has(pos):
 		print("Plot already tilled")
-		return false
+		return null
 
 	print("Placing plot")
 	var plot: Plot = plot_scn.instantiate()
 	add_child(plot)
 	plot.global_position = pos
 	plots[pos] = plot
-	return true
+	return plot
+
+func get_plot(pos: Vector2i) -> Plot:
+	return plots[pos]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_dt: float) -> void:

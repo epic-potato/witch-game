@@ -21,15 +21,20 @@ class Item:
 @export var capacity: int = 10
 @export var stack_size: int = 5
 
+var active_idx: int = 0
+
 var items: Array[Item] = []
 
 func _ready():
 	items.resize(capacity)
 	items.fill(null)
 
+func get_next_item() -> Game.Type:
+	for idx in items.size():
+		if idx > active_idx:
+			if items[idx] != null:
+				active_idx = idx
 func add(new_item: Item) -> bool:
-
-	print("ADDING ITEM")
 	var empty_idx = -1
 	for idx in items.size():
 		var item = items[idx]

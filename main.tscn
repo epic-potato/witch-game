@@ -1055,6 +1055,7 @@ target_dimensions = Vector2i(640, 360)
 current = true
 
 [node name="red_cap_spawner" type="Node2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(361, 293)
 script = ExtResource("13_4t2uq")
@@ -1063,6 +1064,7 @@ max_distance = 64.0
 rate = 20.0
 
 [node name="red_cap_spawner2" type="Node2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(500, 82)
 script = ExtResource("13_4t2uq")
@@ -1071,6 +1073,7 @@ max_distance = 64.0
 rate = 20.0
 
 [node name="garlic_spawner" type="Node2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(124, 112)
 script = ExtResource("13_4t2uq")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://cspe43pr2dloh"]
+[gd_scene load_steps=32 format=3 uid="uid://cspe43pr2dloh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_d8h3g"]
 [ext_resource type="AudioStream" uid="uid://b1kbau4juy3v8" path="res://sounds/rustle.wav" id="4_o5xm2"]
 [ext_resource type="PackedScene" uid="uid://c5y2ju226jk5a" path="res://entities/hoe.tscn" id="5_f1rkh"]
 [ext_resource type="Texture2D" uid="uid://bwi66xu7o7qbf" path="res://entities/witch_animations_v1.png" id="6_ba12g"]
+[ext_resource type="FontFile" uid="uid://c6o2n04gl288r" path="res://fonts/m3x6.ttf" id="6_jet3w"]
 [ext_resource type="PackedScene" uid="uid://dcvend5fjs46k" path="res://entities/guide.tscn" id="6_t55h6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hmql"]
@@ -358,6 +359,9 @@ height = 22.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_qo587"]
 radius = 17.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_j6h2k"]
+font = ExtResource("6_jet3w")
+
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_d8h3g")
@@ -400,3 +404,12 @@ y_sort_enabled = true
 position = Vector2(-6, -6)
 
 [node name="guide" parent="." instance=ExtResource("6_t55h6")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -68.0
+offset_top = -56.0
+offset_right = 73.0
+offset_bottom = -33.0
+label_settings = SubResource("LabelSettings_j6h2k")
+horizontal_alignment = 1
+vertical_alignment = 2
