@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwi66xu7o7qbf"
-path="res://.godot/imported/witch_animations_v1.png-0b7adca0b1c6e0c9db023249bbc3ec14.ctex"
+uid="uid://bgfms6afh6vu1"
+path="res://.godot/imported/Chamomile.png-83c8ec8814884d016624bc5da60d5252.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/witch_animations_v1.png"
-dest_files=["res://.godot/imported/witch_animations_v1.png-0b7adca0b1c6e0c9db023249bbc3ec14.ctex"]
+source_file="res://aseprite_out/Chamomile.png"
+dest_files=["res://.godot/imported/Chamomile.png-83c8ec8814884d016624bc5da60d5252.ctex"]
 
 [params]
 

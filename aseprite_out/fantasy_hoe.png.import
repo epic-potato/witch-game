@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iysmcwudeqbc"
-path="res://.godot/imported/garlic_crop.png-eb75c2f46de0c6d5a79565c5e0e7a46a.ctex"
+uid="uid://kwq2xs4gm8sn"
+path="res://.godot/imported/fantasy_hoe.png-ca912495a12729a77d6c08bd2792f1b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/garlic_crop.png"
-dest_files=["res://.godot/imported/garlic_crop.png-eb75c2f46de0c6d5a79565c5e0e7a46a.ctex"]
+source_file="res://aseprite_out/fantasy_hoe.png"
+dest_files=["res://.godot/imported/fantasy_hoe.png-ca912495a12729a77d6c08bd2792f1b0.ctex"]
 
 [params]
 
