@@ -2,6 +2,8 @@ class_name Interact
 
 extends Area2D
 
+@export var interactable: bool = true
+
 enum Type { FORAGE, PICKUP, MESSAGE }
 
 class Result:

@@ -25,7 +25,9 @@ func till_plot(pos: Vector2i) -> Plot:
 	return plot
 
 func get_plot(pos: Vector2i) -> Plot:
-	return plots[pos]
+	if plots.has(pos):
+		return plots[pos]
+	return null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_dt: float) -> void:

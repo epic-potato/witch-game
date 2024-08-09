@@ -10,6 +10,7 @@ static func make(cap: int, stack: int) -> Bag:
 
 	return bag
 
+
 class Item:
 	var type: Game.Type
 	var count: int
@@ -18,22 +19,54 @@ class Item:
 		type = p_type
 		count = p_count
 
+
 @export var capacity: int = 10
 @export var stack_size: int = 5
 
 var active_idx: int = 0
-
 var items: Array[Item] = []
+
 
 func _ready():
 	items.resize(capacity)
 	items.fill(null)
+	add(Item.new(Game.Type.HOE, 1))
+
 
 func get_next_item() -> Game.Type:
-	for idx in items.size():
-		if idx > active_idx:
-			if items[idx] != null:
-				active_idx = idx
+	for idx in range(active_idx, items.size()):
+		if items[idx] != null:
+			active_idx = idx
+			return items[active_idx].type
+
+	for idx in active_idx:
+		if items[idx] != null:
+			active_idx = idx
+			return items[active_idx].type
+	return Game.Type.NONE
+
+
+func get_prev_item() -> Game.Type:
+	for idx in range(active_idx, 0, -1):
+		if items[idx] != null:
+			active_idx = idx
+			return items[active_idx].type
+
+	for idx in range(items.size() - 1, active_idx, -1):
+		if items[idx] != null:
+			active_idx = idx
+			return items[active_idx].type
+
+	return Game.Type.NONE
+
+
+func get_active_item() -> Game.Type:
+	var item = items[active_idx]
+	if item == null:
+		return Game.Type.NONE
+	return item.type
+
+
 func add(new_item: Item) -> bool:
 	var empty_idx = -1
 	for idx in items.size():
@@ -63,3 +96,11 @@ func add(new_item: Item) -> bool:
 
 	return true
 
+
+func subtract_active(amount: int) -> void:
+	if items[active_idx] != null:
+		if items[active_idx].count > 0:
+			items[active_idx].count -= amount
+
+		if items[active_idx].count == 0:
+			items[active_idx] = null

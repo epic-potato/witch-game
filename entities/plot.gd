@@ -38,20 +38,19 @@ func get_plant_frame():
 		_:
 			return -1
 
-func plant_seed(plant_scn: PackedScene):
+func plant_seed(plnt: Plant):
 	if state == State.EMPTY:
-		var _plant = plant_scn.instantiate() as Plant
-		assert(_plant is Plant, "Can only plant Plants in the ground")
-		plant = _plant
+		plant = plnt
 		add_child(plant)
 		plant.set_frame(-1)
+		plant.count = 2 + int(randi() % 10 == 0) # at least 2, 10% chance of 3
 		state = State.SEED
 
 func handle_state():
 	var frame = get_frame()
 	if time_until_dry > 0:
 		frame -= 1
-	
+
 	sprite.frame = frame
 	if plant != null:
 		plant.set_frame(get_plant_frame())
@@ -63,10 +62,10 @@ func _process(dt: float) -> void:
 		sprite.frame = 0
 	else:
 		sprite.frame = 1
-	
+
 	if state != State.EMPTY and time_until_dry > 0:
 		elapsed += dt
-	
+
 	var percent_time_waited = elapsed/time_to_ripe
 	if percent_time_waited < .2:
 		state = State.SEED
@@ -78,7 +77,7 @@ func _process(dt: float) -> void:
 		state = State.UNRIPE
 	else:
 		state = State.RIPE
-	
+
 	if plant == null:
 		state = State.EMPTY
 

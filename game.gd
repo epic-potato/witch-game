@@ -6,7 +6,7 @@ enum Type {
 	RED_CAP,
 	GARLIC,
 	HOE,
-	END,
+	NONE,
 }
 
 func type_to_str(type: Type) -> String:
@@ -35,9 +35,10 @@ class Item:
 var items: Array[Item] = []
 
 func _ready() -> void:
-	items.resize(Type.END)
+	items.resize(Type.NONE)
 	items[Type.RED_CAP] = Item.init(Type.RED_CAP, preload("res://entities/red_cap.tscn"))
 	items[Type.GARLIC] = Item.init(Type.GARLIC, preload("res://entities/garlic.tscn"))
+	items[Type.HOE] = Item.init(Type.HOE, preload("res://entities/hoe.tscn"))
 
 func set_farm(_farm: Farm) -> void:
 	if farm != null:
@@ -47,6 +48,9 @@ func set_farm(_farm: Farm) -> void:
 
 func set_scene(_scene: Node2D) -> void:
 	scene = _scene
+
+func get_item(type: Type) -> Node2D:
+	return items[type].scene.instantiate()
 
 func spawn(type: Type, global_pos: Vector2) -> Node:
 	var item = items[type].scene.instantiate()

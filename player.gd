@@ -10,7 +10,6 @@ enum State { IDLE, WALK, FORAGE, USE }
 @onready var sprite: AnimatedSprite2D = $sprite
 @onready var zone: Area2D = $interact_zone
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
-@onready var hoe: Hoe = $hoe
 @onready var guide: Node2D = $guide
 @onready var plot_scn := preload("res://entities/plot.tscn")
 
@@ -25,6 +24,9 @@ var last_plot_dir: Vector2i = Vector2i.ZERO
 var mouse_mode = false
 var speech_timer: float = 0
 
+var active_item: Game.Type
+var tool: Node2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -33,6 +35,25 @@ func _ready():
 func say(msg: String):
 	speech.text = msg
 	speech_timer = 3
+
+func active_item_type() -> Game.Type:
+	var item = game.bag.get_active_item()
+	if active_item != null:
+		if active_item != item:
+			active_item = item
+			if tool != null:
+				tool.queue_free()
+			tool = game.get_item(item)
+			add_child(tool)
+			tool.position.x -= 6
+			tool.position.y -= 6
+			tool.z_index = 1
+			if tool is Plant:
+				var plant = tool as Plant
+				plant.set_frame(5)
+				plant.interactable = false
+				tool.get_node("AnimatedSprite2D").frame = 5
+	return item
 
 func interact():
 	var items = zone.get_overlapping_areas()
@@ -49,7 +70,32 @@ func interact():
 					say(result.message)
 			return
 
-func handle_anim():
+func use() -> void:
+	var curr_item = active_item_type()
+	match curr_item:
+		Game.Type.NONE:
+			say("I don't have anything")
+			return
+		Game.Type.HOE:
+			var hoe = tool as Hoe
+			var plot = game.farm.till_plot(get_plot_pos())
+			if plot == null:
+				say("There's already a plot here!")
+			hoe.swing()
+		_:
+			var item: Node2D = game.get_item(curr_item)
+			if item is Plant:
+				var plant: Plant = item as Plant
+				var plot = game.farm.get_plot(get_plot_pos())
+				if plot == null:
+					say("The earth here isn't ready for planting...")
+					return
+				plot.plant_seed(plant)
+				game.bag.subtract_active(1)
+				return
+
+func handle_visuals():
+	tool.visible = active_item_type() == Game.Type.HOE and state != State.FORAGE
 	match state:
 		State.IDLE:
 			sprite.play("idle_look_up")
@@ -114,10 +160,13 @@ func _process(dt: float) -> void:
 		interact()
 
 	if Input.is_action_just_pressed("use"):
-		var plot = game.farm.till_plot(get_plot_pos())
-		if plot == null:
-			say("There's already a plot here!")
-		hoe.swing()
+		use()
+
+	if Input.is_action_just_pressed("next_item"):
+		game.bag.get_next_item()
+
+	if Input.is_action_just_pressed("prev_item"):
+		game.bag.get_prev_item()
 
 	# normalize diagonal speeds
 	var mag = velocity.length()
@@ -128,20 +177,22 @@ func _process(dt: float) -> void:
 		Face.RIGHT:
 			sprite.flip_h = true
 			sprite.offset.x = -4;
-			hoe.scale.x = -1
-			hoe.position.x = 6
+			if tool != null:
+				tool.scale.x = -1
+				tool.position.x = 6
 		Face.LEFT:
 			sprite.flip_h = false
 			sprite.offset.x = 0;
-			hoe.scale.x = 1
-			hoe.position.x = -6
+			if tool != null:
+				tool.scale.x = 1
+				tool.position.x = -6
 
 	if speech_timer > 0:
 		speech_timer -= dt
 	else:
 		speech.text = ""
 
-	handle_anim()
+	handle_visuals()
 	move_and_slide()
 	guide.global_position = get_plot_pos()
 
