@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dnshor2biv22b"]
+[gd_scene load_steps=26 format=3 uid="uid://dnshor2biv22b"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5ug0r"]
 [ext_resource type="PackedScene" uid="uid://cspe43pr2dloh" path="res://entities/player.tscn" id="1_vysco"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" path="res://farm.gd" id="12_jxydw"]
 [ext_resource type="Script" path="res://spawner.gd" id="13_4t2uq"]
 [ext_resource type="PackedScene" uid="uid://dpfyotcwa3lar" path="res://entities/garlic.tscn" id="14_aw7k8"]
+[ext_resource type="PackedScene" uid="uid://c8cyiy4df28cc" path="res://entities/watering_can.tscn" id="16_umowf"]
+[ext_resource type="Texture2D" uid="uid://d0m8te1exhvn1" path="res://biig_garlic.png" id="17_2ehw6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ewv8p"]
 texture = ExtResource("2_erbym")
@@ -1274,26 +1276,56 @@ target_dimensions = Vector2i(640, 360)
 current = true
 
 [node name="red_cap_spawner" type="Node2D" parent="."]
-visible = false
 y_sort_enabled = true
-position = Vector2(361, 293)
+position = Vector2(361, 309)
 script = ExtResource("13_4t2uq")
 scene = ExtResource("6_4p63c")
 max_distance = 64.0
-rate = 20.0
+rate = 2.0
 
 [node name="red_cap_spawner2" type="Node2D" parent="."]
-visible = false
 y_sort_enabled = true
-position = Vector2(500, 82)
+position = Vector2(504, 90)
 script = ExtResource("13_4t2uq")
 scene = ExtResource("6_4p63c")
 max_distance = 64.0
-rate = 20.0
+rate = 2.0
 
 [node name="garlic_spawner" type="Node2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(124, 112)
 script = ExtResource("13_4t2uq")
 scene = ExtResource("14_aw7k8")
 max_distance = 64.0
+
+[node name="garlic" parent="." instance=ExtResource("14_aw7k8")]
+position = Vector2(578, 47)
+
+[node name="red_cap" parent="." instance=ExtResource("6_4p63c")]
+position = Vector2(253, 260)
+
+[node name="red_cap2" parent="." instance=ExtResource("6_4p63c")]
+position = Vector2(69, 60)
+
+[node name="red_cap3" parent="." instance=ExtResource("6_4p63c")]
+position = Vector2(130, 352)
+
+[node name="watering_can" parent="." instance=ExtResource("16_umowf")]
+
+[node name="beeg_garlic" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("17_2ehw6")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://sprites/biig_garlic.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "a37a7fd821bfb6a9f1ce9e977374422f"

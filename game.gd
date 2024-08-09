@@ -6,6 +6,7 @@ enum Type {
 	RED_CAP,
 	GARLIC,
 	HOE,
+	WATERING_CAN,
 	NONE,
 }
 
@@ -39,6 +40,7 @@ func _ready() -> void:
 	items[Type.RED_CAP] = Item.init(Type.RED_CAP, preload("res://entities/red_cap.tscn"))
 	items[Type.GARLIC] = Item.init(Type.GARLIC, preload("res://entities/garlic.tscn"))
 	items[Type.HOE] = Item.init(Type.HOE, preload("res://entities/hoe.tscn"))
+	items[Type.WATERING_CAN] = Item.init(Type.WATERING_CAN, preload("res://entities/watering_can.tscn"))
 
 func set_farm(_farm: Farm) -> void:
 	if farm != null:
@@ -50,6 +52,8 @@ func set_scene(_scene: Node2D) -> void:
 	scene = _scene
 
 func get_item(type: Type) -> Node2D:
+	if type == Type.NONE:
+		return null
 	return items[type].scene.instantiate()
 
 func spawn(type: Type, global_pos: Vector2) -> Node:

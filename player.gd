@@ -24,7 +24,7 @@ var last_plot_dir: Vector2i = Vector2i.ZERO
 var mouse_mode = false
 var speech_timer: float = 0
 
-var active_item: Game.Type
+var active_item: Game.Type = Game.Type.NONE
 var tool: Node2D
 
 # Called when the node enters the scene tree for the first time.
@@ -36,24 +36,31 @@ func say(msg: String):
 	speech.text = msg
 	speech_timer = 3
 
+
 func active_item_type() -> Game.Type:
 	var item = game.bag.get_active_item()
-	if active_item != null:
-		if active_item != item:
-			active_item = item
-			if tool != null:
-				tool.queue_free()
-			tool = game.get_item(item)
-			add_child(tool)
-			tool.position.x -= 6
-			tool.position.y -= 6
-			tool.z_index = 1
-			if tool is Plant:
-				var plant = tool as Plant
-				plant.set_frame(5)
-				plant.interactable = false
-				tool.get_node("AnimatedSprite2D").frame = 5
+	if active_item != item:
+		active_item = item
+
+		if tool != null:
+			tool.queue_free()
+
+		if item == Game.Type.NONE:
+			return item
+
+		tool = game.get_item(item)
+		tool.position.x -= 8
+		tool.position.y -= 6
+		tool.z_index = 1
+		add_child(tool)
+		if tool is Interact:
+			tool.interactable = false
+		if tool is Plant:
+			var plant = tool as Plant
+			plant.set_frame(5)
+			tool.get_node("AnimatedSprite2D").frame = 5
 	return item
+
 
 func interact():
 	var items = zone.get_overlapping_areas()
@@ -64,11 +71,13 @@ func interact():
 			match result.type:
 				Interact.Type.FORAGE:
 					state = State.FORAGE
-					print("Collecting: %s" % game.type_to_str(result.forage.type))
 					game.bag.add(result.forage)
 				Interact.Type.MESSAGE:
 					say(result.message)
+				Interact.Type.NONE:
+					continue
 			return
+
 
 func use() -> void:
 	var curr_item = active_item_type()
@@ -82,6 +91,15 @@ func use() -> void:
 			if plot == null:
 				say("There's already a plot here!")
 			hoe.swing()
+		Game.Type.WATERING_CAN:
+			var can = tool as WateringCan
+			var plot = game.farm.get_plot(get_plot_pos())
+			if plot == null or plot.state == Plot.State.EMPTY:
+				say("There's nothing to water here...")
+				return
+			can.use()
+			plot.water()
+			return
 		_:
 			var item: Node2D = game.get_item(curr_item)
 			if item is Plant:
@@ -93,14 +111,26 @@ func use() -> void:
 				plot.plant_seed(plant)
 				game.bag.subtract_active(1)
 				return
+			if item is Forageable:
+				var plot = game.farm.get_plot(get_plot_pos())
+				if plot != null:
+					say("I can't grow these, only the woods can!")
+					return
+				say("I'm not sure what to do with this...")
+				return
+
 
 func handle_visuals():
-	tool.visible = active_item_type() == Game.Type.HOE and state != State.FORAGE
+	active_item_type()
+	if tool != null:
+		tool.visible = state != State.FORAGE
+
 	match state:
 		State.IDLE:
 			sprite.play("idle_look_up")
 		State.WALK:
 			sprite.play("idle_bounce")
+
 
 func get_plot_pos() -> Vector2:
 	var mouse_pos := get_global_mouse_position()
@@ -185,7 +215,7 @@ func _process(dt: float) -> void:
 			sprite.offset.x = 0;
 			if tool != null:
 				tool.scale.x = 1
-				tool.position.x = -6
+				tool.position.x = -10
 
 	if speech_timer > 0:
 		speech_timer -= dt

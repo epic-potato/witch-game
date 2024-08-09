@@ -4,13 +4,16 @@ extends Area2D
 
 @export var interactable: bool = true
 
-enum Type { FORAGE, PICKUP, MESSAGE }
+enum Type { FORAGE, PICKUP, MESSAGE, NONE }
 
 class Result:
 	var type: Type
 	var forage: Bag.Item
 	var pickup: Bag.Item
 	var message: String
+
+	static func none() -> Result:
+		return Result.new(Type.NONE, null)
 
 	func _init(_type: Type, payload: Variant):
 		type = _type
@@ -27,4 +30,4 @@ class Result:
 
 
 func interact() -> Result:
-	return Result.new(Type.MESSAGE, "Hello, world!")
+	return Result.none()

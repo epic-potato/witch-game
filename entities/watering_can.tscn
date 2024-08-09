@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8cyiy4df28cc"]
+
+[ext_resource type="Texture2D" uid="uid://bqe7fgkoo7ne0" path="res://entities/watering_can_v2.png" id="1_h2hmu"]
+[ext_resource type="Script" path="res://watering_can.gd" id="2_52gxj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a60mc"]
+atlas = ExtResource("1_h2hmu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_loi7o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a60mc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="watering_can" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_loi7o")
+offset = Vector2(-4, -16)
+script = ExtResource("2_52gxj")
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://sprites/watering_can_v2.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "34293497a27c5d5864428bba7086f528"

@@ -16,8 +16,9 @@ func _ready():
 	sprite.frame = rng.randi_range(0, total_frames)
 
 func interact() -> Interact.Result:
-	print("I'm foraged! My type is:")
-	print(game.type_to_str(type))
+	if !interactable:
+		return Interact.Result.none()
+
 	var result := Interact.Result.new(Interact.Type.FORAGE, Bag.Item.new(type, count))
 	self.queue_free()
 	return result

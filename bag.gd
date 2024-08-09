@@ -31,29 +31,45 @@ func _ready():
 	items.resize(capacity)
 	items.fill(null)
 	add(Item.new(Game.Type.HOE, 1))
+	add(Item.new(Game.Type.WATERING_CAN, 1))
 
 
 func get_next_item() -> Game.Type:
+	print("getting next item")
 	for idx in range(active_idx, items.size()):
+		if idx == active_idx:
+			continue
+
 		if items[idx] != null:
+			print("found one at %d" % idx)
 			active_idx = idx
 			return items[active_idx].type
 
+	print("looped")
 	for idx in active_idx:
 		if items[idx] != null:
+			print("found one at %d" % idx)
 			active_idx = idx
 			return items[active_idx].type
+
 	return Game.Type.NONE
 
 
 func get_prev_item() -> Game.Type:
-	for idx in range(active_idx, 0, -1):
+	print("getting previous item")
+	for idx in range(active_idx, -1, -1):
+		if idx == active_idx:
+			continue
+
 		if items[idx] != null:
+			print("found one at %d" % idx)
 			active_idx = idx
 			return items[active_idx].type
 
+	print("looped")
 	for idx in range(items.size() - 1, active_idx, -1):
 		if items[idx] != null:
+			print("found one at %d" % idx)
 			active_idx = idx
 			return items[active_idx].type
 
