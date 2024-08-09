@@ -23,6 +23,7 @@ var step_time: float = 0
 var last_plot_dir: Vector2i = Vector2i.ZERO
 var mouse_mode = false
 var speech_timer: float = 0
+var tool_is_active: bool = false
 
 var active_item: Game.Type = Game.Type.NONE
 var tool: Node2D
@@ -122,40 +123,44 @@ func use() -> void:
 func handle_visuals():
 	active_item_type()
 	if tool != null:
-		tool.visible = state != State.FORAGE
+		tool.visible = state != State.FORAGE and tool_is_active
 
+	guide.visible = tool_is_active
 	match state:
 		State.IDLE:
 			sprite.play("idle_look_up")
 		State.WALK:
 			sprite.play("idle_bounce")
 
+func get_gamepad_pos():
+	var dir := get_gamepad_axes().normalized()
+	if absf(dir.x) > absf(dir.y) * 2:
+		dir.y = 0
+	if absf(dir.y) > absf(dir.x) * 2:
+		dir.x = 0
+
 
 func get_plot_pos() -> Vector2:
-	var mouse_pos := get_global_mouse_position()
-	var dir := (global_position - mouse_pos).normalized()
-	var snap_pos := Vector2(1, 0)
+	var dir = get_gamepad_axes().normalized()
+	if dir == Vector2.ZERO:
+		var mouse_pos := get_global_mouse_position()
+		dir = (mouse_pos - global_position).normalized()
 
-	var snapped_angle: float = round(dir.angle()/(PI/4))*(PI/4)
-	if snapped_angle == 0 or snapped_angle == 2*PI:
-		snap_pos = Vector2(-1, 0)
-	if snapped_angle == PI/4:
-		snap_pos = Vector2(-1, -1)
-	if snapped_angle == PI/2:
-		snap_pos = Vector2(0, -1)
-	if snapped_angle == 3*PI/4:
-		snap_pos = Vector2(1, -1)
-	if abs(snapped_angle) == PI:
-		snap_pos = Vector2(1, 0)
-	if snapped_angle == -3*PI/4:
-		snap_pos = Vector2(1, 1)
-	if snapped_angle == -PI/2:
-		snap_pos = Vector2(0, 1)
-	if snapped_angle == -PI/4:
-		snap_pos = Vector2(-1, 1)
+	if absf(dir.x) > absf(dir.y) * 2:
+		dir.y = 0
+	if absf(dir.y) > absf(dir.x) * 2:
+		dir.x = 0
 
-	return (Vector2(round(position.x / 16), round(position.y / 16)) + snap_pos) * 16
+	dir = dir.sign()
 
+	return (Vector2(round(position.x / 16), round(position.y / 16)) + dir) * 16
+
+
+func get_gamepad_axes() -> Vector2:
+	return Vector2(Input.get_axis("point_left", "point_right"), Input.get_axis("point_up", "point_down"))
+
+func is_tool_active() -> bool:
+	return Input.is_action_pressed("ready_tool") or get_gamepad_axes() != Vector2.ZERO
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(dt: float) -> void:
@@ -167,6 +172,8 @@ func _process(dt: float) -> void:
 	timer = 0
 	state = State.IDLE
 	velocity = Vector2(0, 0)
+
+	tool_is_active = is_tool_active()
 	if Input.is_action_pressed("up"):
 		velocity.y = -speed * Input.get_action_strength("up");
 
@@ -181,7 +188,6 @@ func _process(dt: float) -> void:
 		velocity.x = speed * Input.get_action_strength("right");
 		facing = Face.RIGHT
 
-
 	if velocity.length() > 0:
 		state = State.WALK
 
@@ -189,7 +195,8 @@ func _process(dt: float) -> void:
 		interact()
 
 	if Input.is_action_just_pressed("use"):
-		use()
+		if tool_is_active:
+			use()
 
 	if Input.is_action_just_pressed("next_item"):
 		game.bag.get_next_item()
