@@ -1,55 +1,55 @@
 [gd_scene load_steps=11 format=3 uid="uid://dpfyotcwa3lar"]
 
-[ext_resource type="Script" path="res://foragable.gd" id="1_c51o4"]
-[ext_resource type="Texture2D" uid="uid://iysmcwudeqbc" path="res://entities/garlic_crop.png" id="2_tpx4j"]
+[ext_resource type="Script" path="res://plant.gd" id="1_te3fd"]
+[ext_resource type="Texture2D" uid="uid://iysmcwudeqbc" path="res://entities/garlic_crop.png" id="2_3f5ve"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yrx7p"]
 radius = 6.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l74aa"]
-atlas = ExtResource("2_tpx4j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6padv"]
+atlas = ExtResource("2_3f5ve")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kyqbe"]
-atlas = ExtResource("2_tpx4j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_br1sx"]
+atlas = ExtResource("2_3f5ve")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0b0ye"]
-atlas = ExtResource("2_tpx4j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_30fy4"]
+atlas = ExtResource("2_3f5ve")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ecnf"]
-atlas = ExtResource("2_tpx4j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcmw5"]
+atlas = ExtResource("2_3f5ve")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dav8l"]
-atlas = ExtResource("2_tpx4j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7icl3"]
+atlas = ExtResource("2_3f5ve")
 region = Rect2(16, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_47qre"]
-atlas = ExtResource("2_tpx4j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsuf8"]
+atlas = ExtResource("2_3f5ve")
 region = Rect2(32, 16, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8xt7o"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_pt42h"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l74aa")
+"texture": SubResource("AtlasTexture_6padv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kyqbe")
+"texture": SubResource("AtlasTexture_br1sx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0b0ye")
+"texture": SubResource("AtlasTexture_30fy4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8ecnf")
+"texture": SubResource("AtlasTexture_qcmw5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dav8l")
+"texture": SubResource("AtlasTexture_7icl3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_47qre")
+"texture": SubResource("AtlasTexture_dsuf8")
 }],
 "loop": true,
 "name": &"default",
@@ -58,7 +58,7 @@ animations = [{
 
 [node name="garlic" type="Area2D"]
 y_sort_enabled = true
-script = ExtResource("1_c51o4")
+script = ExtResource("1_te3fd")
 type = 1
 count = 1
 random_frame = false
@@ -71,7 +71,7 @@ shape = SubResource("CircleShape2D_yrx7p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_8xt7o")
+sprite_frames = SubResource("SpriteFrames_pt42h")
 frame = 2
 speed_scale = 0.0
 offset = Vector2(0, -8)
@@ -84,4 +84,4 @@ metadata/_aseprite_wizard_config_ = {
 "slice": "",
 "source": "res://sprites/garlic_crop.aseprite"
 }
-metadata/_aseprite_wizard_source_file_hash_ = "50e680c92ca9048d1fcb9a50856b4d81"
+metadata/_aseprite_wizard_source_file_hash_ = "8c09ac18360f3e1a88cd50bf3e14e912"

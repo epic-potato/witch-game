@@ -5,7 +5,10 @@ extends Node
 enum Type {
 	RED_CAP,
 	GARLIC,
-	END,
+	TOMATO,
+	HOE,
+	WATERING_CAN,
+	NONE,
 }
 
 func type_to_str(type: Type) -> String:
@@ -14,6 +17,8 @@ func type_to_str(type: Type) -> String:
 			return "red_cap"
 		Type.GARLIC:
 			return "garlic"
+		Type.TOMATO:
+			return "tomato"
 		_:
 			return "unknown"
 
@@ -34,10 +39,12 @@ class Item:
 var items: Array[Item] = []
 
 func _ready() -> void:
-	items.resize(Type.END)
+	items.resize(Type.NONE)
 	items[Type.RED_CAP] = Item.init(Type.RED_CAP, preload("res://entities/red_cap.tscn"))
 	items[Type.GARLIC] = Item.init(Type.GARLIC, preload("res://entities/garlic.tscn"))
-	call_deferred("_parent_farm", self)
+	items[Type.TOMATO] = Item.init(Type.TOMATO, preload("res://entities/tomato.tscn"))
+	items[Type.HOE] = Item.init(Type.HOE, preload("res://entities/hoe.tscn"))
+	items[Type.WATERING_CAN] = Item.init(Type.WATERING_CAN, preload("res://entities/watering_can.tscn"))
 
 func set_farm(_farm: Farm) -> void:
 	if farm != null:
@@ -47,6 +54,11 @@ func set_farm(_farm: Farm) -> void:
 
 func set_scene(_scene: Node2D) -> void:
 	scene = _scene
+
+func get_item(type: Type) -> Node2D:
+	if type == Type.NONE:
+		return null
+	return items[type].scene.instantiate()
 
 func spawn(type: Type, global_pos: Vector2) -> Node:
 	var item = items[type].scene.instantiate()

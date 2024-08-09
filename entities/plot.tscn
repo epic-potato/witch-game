@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8vmckdnjojrs"]
+[gd_scene load_steps=11 format=3 uid="uid://c8vmckdnjojrs"]
 
 [ext_resource type="Texture2D" uid="uid://c2prenileh5gl" path="res://entities/tilled_dirt_and_planting_holes.png" id="1_jkald"]
 [ext_resource type="Script" path="res://entities/plot.gd" id="1_x0c6v"]
@@ -6,36 +6,50 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eejnn"]
 size = Vector2(16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yyavg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_phweh"]
 atlas = ExtResource("1_jkald")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_306k0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr6fy"]
 atlas = ExtResource("1_jkald")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k1mfa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqfp3"]
+atlas = ExtResource("1_jkald")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx3br"]
 atlas = ExtResource("1_jkald")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yr8i6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2a8c"]
 atlas = ExtResource("1_jkald")
 region = Rect2(16, 16, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_lux56"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0po0x"]
+atlas = ExtResource("1_jkald")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r35i7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yyavg")
+"texture": SubResource("AtlasTexture_phweh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_306k0")
+"texture": SubResource("AtlasTexture_tr6fy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k1mfa")
+"texture": SubResource("AtlasTexture_qqfp3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yr8i6")
+"texture": SubResource("AtlasTexture_gx3br")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2a8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0po0x")
 }],
 "loop": true,
 "name": &"default",
@@ -50,8 +64,7 @@ shape = SubResource("RectangleShape2D_eejnn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_lux56")
-frame = 1
+sprite_frames = SubResource("SpriteFrames_r35i7")
 speed_scale = 0.0
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
@@ -62,4 +75,4 @@ metadata/_aseprite_wizard_config_ = {
 "slice": "",
 "source": "res://sprites/tilled_dirt_and_planting_holes.aseprite"
 }
-metadata/_aseprite_wizard_source_file_hash_ = "9d1e118bdf9fba91417f55ada8549aae"
+metadata/_aseprite_wizard_source_file_hash_ = "bf7f9ea900eaab28086d35f27d696209"

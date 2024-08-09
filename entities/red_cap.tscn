@@ -1,34 +1,34 @@
 [gd_scene load_steps=8 format=3 uid="uid://e2i5b6epgqkp"]
 
 [ext_resource type="Script" path="res://foragable.gd" id="1_1s41i"]
-[ext_resource type="Texture2D" uid="uid://bm1bma2x2avr7" path="res://entities/red_cap.png" id="3_php5y"]
+[ext_resource type="Texture2D" uid="uid://bm1bma2x2avr7" path="res://entities/red_cap.png" id="2_4hi33"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yrx7p"]
 radius = 5.09902
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ybk3f"]
-atlas = ExtResource("3_php5y")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mxny"]
+atlas = ExtResource("2_4hi33")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8trfs"]
-atlas = ExtResource("3_php5y")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kh1h"]
+atlas = ExtResource("2_4hi33")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sq3y3"]
-atlas = ExtResource("3_php5y")
+[sub_resource type="AtlasTexture" id="AtlasTexture_850p6"]
+atlas = ExtResource("2_4hi33")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_e53x6"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_m6ptk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ybk3f")
+"texture": SubResource("AtlasTexture_4mxny")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8trfs")
+"texture": SubResource("AtlasTexture_0kh1h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sq3y3")
+"texture": SubResource("AtlasTexture_850p6")
 }],
 "loop": true,
 "name": &"default",
@@ -48,7 +48,7 @@ shape = SubResource("CircleShape2D_yrx7p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_e53x6")
+sprite_frames = SubResource("SpriteFrames_m6ptk")
 speed_scale = 0.0
 offset = Vector2(0, -8)
 metadata/_aseprite_wizard_config_ = {

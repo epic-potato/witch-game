@@ -26,6 +26,6 @@ func _process(dt: float) -> void:
 		var result := rng.randi_range(0, int(60 / rate))
 		if result == 1:
 			var new_scene = scene.instantiate()
-			new_scene.global_position = global_position + Vector2(rng.randf_range(-max_distance, max_distance), rng.randf_range(-max_distance, max_distance))
+			new_scene.position += Vector2(rng.randf_range(-max_distance, max_distance), rng.randf_range(-max_distance, max_distance))
 			add_child(new_scene)
 
