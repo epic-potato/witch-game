@@ -13,7 +13,7 @@ enum State { IDLE, WALK, FORAGE, USE }
 @onready var guide: Node2D = $guide
 @onready var plot_scn := preload("res://entities/plot.tscn")
 
-@export var speed: int = 50
+@export var speed: int = 90
 
 var state: State = State.IDLE
 var facing: Face = Face.RIGHT
@@ -58,7 +58,6 @@ func active_item_type() -> Game.Type:
 		if tool is Plant:
 			var plant = tool as Plant
 			plant.set_frame(3)
-			tool.get_node("AnimatedSprite2D").frame = 5
 	return item
 
 
@@ -108,8 +107,8 @@ func use() -> void:
 				if plot == null:
 					say("The earth here isn't ready for planting...")
 					return
-				plot.plant_seed(plant)
-				game.bag.subtract_active(1)
+				if plot.plant_seed(plant):
+					game.bag.subtract_active(1)
 				return
 			if item is Forageable:
 				var plot = game.farm.get_plot(get_plot_pos())

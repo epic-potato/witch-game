@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnj6jal3hfcee"
-path="res://.godot/imported/fantasy_hoe.png-80ea7a5d33bee54b5624e2131a4c2fe0.ctex"
+uid="uid://britqfxooph12"
+path="res://.godot/imported/guide.png-e0a5f8ef8b0be141bf1fb11740a9a6bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/fantasy_hoe.png"
-dest_files=["res://.godot/imported/fantasy_hoe.png-80ea7a5d33bee54b5624e2131a4c2fe0.ctex"]
+source_file="res://aseprite_out/guide.png"
+dest_files=["res://.godot/imported/guide.png-e0a5f8ef8b0be141bf1fb11740a9a6bd.ctex"]
 
 [params]
 

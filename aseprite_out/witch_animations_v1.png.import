@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm1bma2x2avr7"
-path="res://.godot/imported/red_cap.png-8cc4e845f3558d809fc06d0aeb2c4df8.ctex"
+uid="uid://d4ep5raw1xqy4"
+path="res://.godot/imported/witch_animations_v1.png-3e87cb6812d19a6c3074a4db907faed7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/red_cap.png"
-dest_files=["res://.godot/imported/red_cap.png-8cc4e845f3558d809fc06d0aeb2c4df8.ctex"]
+source_file="res://aseprite_out/witch_animations_v1.png"
+dest_files=["res://.godot/imported/witch_animations_v1.png-3e87cb6812d19a6c3074a4db907faed7.ctex"]
 
 [params]
 

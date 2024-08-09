@@ -38,15 +38,17 @@ func get_plant_frame():
 		_:
 			return -1
 
-func plant_seed(plnt: Plant):
-	if state == State.EMPTY:
-		elapsed = randf_range(0, plnt.time_to_ripe / 10)
-		plant = plnt
-		add_child(plant)
-		plant.set_frame(-1)
-		plant.z_index = 1
-		plant.count = 2 + int(randi() % 10 == 0) # at least 2, 10% chance of 3
-		state = State.SEED
+func plant_seed(plnt: Plant) -> bool:
+	if state != State.EMPTY:
+		return false
+	elapsed = randf_range(0, plnt.time_to_ripe / 10.0)
+	plant = plnt
+	add_child(plant)
+	plant.set_frame(-1)
+	plant.z_index = 1
+	plant.count = 2 + int(randi() % 10 == 0) # at least 2, 10% chance of 3
+	state = State.SEED
+	return true
 
 func water():
 	time_until_dry = 120 + randf_range(0, 30)

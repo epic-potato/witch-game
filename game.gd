@@ -3,11 +3,19 @@ class_name Game
 extends Node
 
 enum Type {
-	RED_CAP,
-	GARLIC,
-	TOMATO,
+	# tools
 	HOE,
 	WATERING_CAN,
+
+	# foraged
+	RED_CAP,
+	CHAMOMILE,
+	BLUE_CRYSTAL,
+	PURPLE_CRYSTAL,
+
+	# crops
+	GARLIC,
+	TOMATO,
 	NONE,
 }
 
@@ -40,11 +48,19 @@ var items: Array[Item] = []
 
 func _ready() -> void:
 	items.resize(Type.NONE)
-	items[Type.RED_CAP] = Item.init(Type.RED_CAP, preload("res://entities/red_cap.tscn"))
-	items[Type.GARLIC] = Item.init(Type.GARLIC, preload("res://entities/garlic.tscn"))
-	items[Type.TOMATO] = Item.init(Type.TOMATO, preload("res://entities/tomato.tscn"))
+	# tools
 	items[Type.HOE] = Item.init(Type.HOE, preload("res://entities/hoe.tscn"))
 	items[Type.WATERING_CAN] = Item.init(Type.WATERING_CAN, preload("res://entities/watering_can.tscn"))
+
+	# foraged
+	items[Type.RED_CAP] = Item.init(Type.RED_CAP, preload("res://entities/foraged/red_cap.tscn"))
+	items[Type.CHAMOMILE] = Item.init(Type.CHAMOMILE, preload("res://entities/foraged/chamomile.tscn"))
+	items[Type.BLUE_CRYSTAL] = Item.init(Type.BLUE_CRYSTAL, preload("res://entities/foraged/blue_crystal.tscn"))
+	items[Type.PURPLE_CRYSTAL] = Item.init(Type.BLUE_CRYSTAL, preload("res://entities/foraged/purple_crystal.tscn"))
+
+	# crops
+	items[Type.GARLIC] = Item.init(Type.GARLIC, preload("res://entities/crops/garlic.tscn"))
+	items[Type.TOMATO] = Item.init(Type.TOMATO, preload("res://entities/crops/tomato.tscn"))
 
 func set_farm(_farm: Farm) -> void:
 	if farm != null:

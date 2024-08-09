@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://ieuh12g4kum"]
+
+[ext_resource type="Script" path="res://foragable.gd" id="1_to5dm"]
+[ext_resource type="Texture2D" uid="uid://bgfms6afh6vu1" path="res://aseprite_out/Chamomile.png" id="2_h0p1l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yrx7p"]
+radius = 5.09902
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luj8j"]
+atlas = ExtResource("2_h0p1l")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y31a"]
+atlas = ExtResource("2_h0p1l")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfycg"]
+atlas = ExtResource("2_h0p1l")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5sphk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_luj8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y31a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfycg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="chamomile" type="Area2D"]
+y_sort_enabled = true
+script = ExtResource("1_to5dm")
+type = 3
+count = 1
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_yrx7p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_5sphk")
+speed_scale = 0.0
+offset = Vector2(0, -8)
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://aseprite_out",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://sprites/Chamomile.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "a028607882703788daab3e8d5b681462"
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": true,
+"slice_section": false
+}

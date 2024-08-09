@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2prenileh5gl"
-path="res://.godot/imported/tilled_dirt_and_planting_holes.png-4fd95ff56c4713b3c5b40b62edb3d20d.ctex"
+uid="uid://cv02ttdh53fql"
+path="res://.godot/imported/tilled_dirt_and_planting_holes.png-c55b69c72769978716dde4e593deeec3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/tilled_dirt_and_planting_holes.png"
-dest_files=["res://.godot/imported/tilled_dirt_and_planting_holes.png-4fd95ff56c4713b3c5b40b62edb3d20d.ctex"]
+source_file="res://aseprite_out/tilled_dirt_and_planting_holes.png"
+dest_files=["res://.godot/imported/tilled_dirt_and_planting_holes.png-c55b69c72769978716dde4e593deeec3.ctex"]
 
 [params]
 

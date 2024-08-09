@@ -1,41 +1,41 @@
 [gd_scene load_steps=9 format=3 uid="uid://cn0dpd0qladq5"]
 
-[ext_resource type="Script" path="res://plant.gd" id="1_xst2r"]
-[ext_resource type="Texture2D" uid="uid://w75gej6pdsxo" path="res://entities/tomato_crop.png" id="2_mjg7m"]
+[ext_resource type="Script" path="res://plant.gd" id="1_cco08"]
+[ext_resource type="Texture2D" uid="uid://ycfi3xtrvm2k" path="res://aseprite_out/tomato_crop.png" id="2_62604"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6mrn"]
 size = Vector2(14.5, 5)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gmigs"]
-atlas = ExtResource("2_mjg7m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig04r"]
+atlas = ExtResource("2_62604")
 region = Rect2(0, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_etu8a"]
-atlas = ExtResource("2_mjg7m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijgr0"]
+atlas = ExtResource("2_62604")
 region = Rect2(16, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1du8r"]
-atlas = ExtResource("2_mjg7m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1asu6"]
+atlas = ExtResource("2_62604")
 region = Rect2(0, 32, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wb1ee"]
-atlas = ExtResource("2_mjg7m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aprd"]
+atlas = ExtResource("2_62604")
 region = Rect2(16, 32, 16, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xd7oq"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ptf0p"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gmigs")
+"texture": SubResource("AtlasTexture_ig04r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_etu8a")
+"texture": SubResource("AtlasTexture_ijgr0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1du8r")
+"texture": SubResource("AtlasTexture_1asu6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wb1ee")
+"texture": SubResource("AtlasTexture_1aprd")
 }],
 "loop": true,
 "name": &"default",
@@ -44,9 +44,9 @@ animations = [{
 
 [node name="tomato" type="Area2D"]
 y_sort_enabled = true
-script = ExtResource("1_xst2r")
+script = ExtResource("1_cco08")
 time_to_ripe = 60
-type = 2
+type = 7
 count = 1
 random_frame = false
 metadata/_edit_group_ = true
@@ -58,17 +58,20 @@ shape = SubResource("RectangleShape2D_u6mrn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_xd7oq")
+sprite_frames = SubResource("SpriteFrames_ptf0p")
 frame = 2
 speed_scale = 0.0
 offset = Vector2(0, -16)
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
-"o_folder": "",
+"o_folder": "res://aseprite_out",
 "o_name": "",
 "only_visible": false,
 "slice": "",
 "source": "res://sprites/tomato_crop.aseprite"
 }
 metadata/_aseprite_wizard_source_file_hash_ = "0bb405b41600d07bfd648c73ec975cec"
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
