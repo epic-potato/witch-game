@@ -107,8 +107,8 @@ func use() -> void:
 				if plot == null:
 					say("The earth here isn't ready for planting...")
 					return
-				plot.plant_seed(plant)
-				game.bag.subtract_active(1)
+				if plot.plant_seed(plant):
+					game.bag.subtract_active(1)
 				return
 			if item is Forageable:
 				var plot = game.farm.get_plot(get_plot_pos())
