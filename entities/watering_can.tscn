@@ -1,17 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8cyiy4df28cc"]
 
-[ext_resource type="Texture2D" uid="uid://bqe7fgkoo7ne0" path="res://entities/watering_can_v2.png" id="1_h2hmu"]
+[ext_resource type="Texture2D" uid="uid://pjuhfuqfw1ad" path="res://aseprite_out/watering_can_v2.png" id="1_ojc4n"]
 [ext_resource type="Script" path="res://watering_can.gd" id="2_52gxj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a60mc"]
-atlas = ExtResource("1_h2hmu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6sjg"]
+atlas = ExtResource("1_ojc4n")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_loi7o"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fkd6r"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a60mc")
+"texture": SubResource("AtlasTexture_c6sjg")
 }],
 "loop": true,
 "name": &"default",
@@ -20,16 +20,19 @@ animations = [{
 
 [node name="watering_can" type="AnimatedSprite2D"]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_loi7o")
+sprite_frames = SubResource("SpriteFrames_fkd6r")
 offset = Vector2(-4, -16)
 script = ExtResource("2_52gxj")
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
-"o_folder": "",
+"o_folder": "res://aseprite_out",
 "o_name": "",
 "only_visible": false,
 "slice": "",
 "source": "res://sprites/watering_can_v2.aseprite"
 }
 metadata/_aseprite_wizard_source_file_hash_ = "34293497a27c5d5864428bba7086f528"
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}

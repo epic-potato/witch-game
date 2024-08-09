@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5y2ju226jk5a"]
 
-[ext_resource type="Texture2D" uid="uid://cnj6jal3hfcee" path="res://entities/fantasy_hoe.png" id="1_cmy33"]
+[ext_resource type="Texture2D" uid="uid://kwq2xs4gm8sn" path="res://aseprite_out/fantasy_hoe.png" id="1_dv7u3"]
 [ext_resource type="Script" path="res://hoe.gd" id="2_7lfyu"]
 
 [node name="hoe" type="Sprite2D"]
 texture_filter = 1
-texture = ExtResource("1_cmy33")
+texture = ExtResource("1_dv7u3")
 offset = Vector2(-6, -4)
 script = ExtResource("2_7lfyu")
 metadata/_aseprite_wizard_config_ = {
@@ -13,7 +13,7 @@ metadata/_aseprite_wizard_config_ = {
 "keep_anim_length": false,
 "layer": "",
 "o_ex_p": "",
-"o_folder": "",
+"o_folder": "res://aseprite_out",
 "o_name": "",
 "only_visible": false,
 "player": "",
@@ -21,3 +21,6 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://sprites/fantasy_hoe.aseprite"
 }
 metadata/_aseprite_wizard_source_file_hash_ = "076c20d1bb652643520ae0450896cee0"
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
