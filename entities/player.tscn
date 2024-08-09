@@ -6,6 +6,10 @@
 [ext_resource type="FontFile" uid="uid://c6o2n04gl288r" path="res://fonts/m3x6.ttf" id="6_jet3w"]
 [ext_resource type="PackedScene" uid="uid://dcvend5fjs46k" path="res://entities/guide.tscn" id="6_t55h6"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p30i6"]
+radius = 6.0
+height = 14.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_scaog"]
 atlas = ExtResource("2_qvn7b")
 region = Rect2(128, 256, 128, 128)
@@ -351,10 +355,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p30i6"]
-radius = 6.0
-height = 22.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_qo587"]
 radius = 17.0
 
@@ -365,6 +365,11 @@ font = ExtResource("6_jet3w")
 y_sort_enabled = true
 script = ExtResource("1_d8h3g")
 metadata/_edit_group_ = true
+
+[node name="collider" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_p30i6")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
@@ -386,11 +391,8 @@ metadata/_aseprite_wizard_interface_config_ = {
 "output_section": true
 }
 
-[node name="collider" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11)
-shape = SubResource("CapsuleShape2D_p30i6")
-
 [node name="interact_zone" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact_zone"]
@@ -401,6 +403,7 @@ shape = SubResource("CircleShape2D_qo587")
 stream = ExtResource("4_o5xm2")
 
 [node name="guide" parent="." instance=ExtResource("6_t55h6")]
+visible = false
 
 [node name="Label" type="Label" parent="."]
 offset_left = -68.0

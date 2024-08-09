@@ -1,0 +1,8 @@
+*.import
+*.tscn
+addons/
+aseprite_out/
+sprites/
+textures/
+sounds/
+fonts/
