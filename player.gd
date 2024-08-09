@@ -13,7 +13,7 @@ enum State { IDLE, WALK, FORAGE, USE }
 @onready var guide: Node2D = $guide
 @onready var plot_scn := preload("res://entities/plot.tscn")
 
-@export var speed: int = 50
+@export var speed: int = 90
 
 var state: State = State.IDLE
 var facing: Face = Face.RIGHT
