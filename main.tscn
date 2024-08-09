@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dnshor2biv22b"]
+[gd_scene load_steps=30 format=3 uid="uid://dnshor2biv22b"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5ug0r"]
 [ext_resource type="PackedScene" uid="uid://cspe43pr2dloh" path="res://entities/player.tscn" id="1_vysco"]
@@ -17,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://dpfyotcwa3lar" path="res://entities/crops/garlic.tscn" id="14_aw7k8"]
 [ext_resource type="Texture2D" uid="uid://tq32mbou2c3w" path="res://aseprite_out/biig_garlic.png" id="16_7jv0l"]
 [ext_resource type="PackedScene" uid="uid://cn0dpd0qladq5" path="res://entities/crops/tomato.tscn" id="17_0b144"]
+[ext_resource type="PackedScene" uid="uid://ieuh12g4kum" path="res://entities/foraged/chamomile.tscn" id="18_teawh"]
+[ext_resource type="PackedScene" uid="uid://d4g63wcpnr5fy" path="res://entities/foraged/purple_crystal.tscn" id="19_sye37"]
+[ext_resource type="PackedScene" uid="uid://civfrcvflvy8b" path="res://entities/foraged/blue_crystal.tscn" id="20_k0jts"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ewv8p"]
 texture = ExtResource("2_erbym")
@@ -1269,7 +1272,6 @@ script = ExtResource("12_jxydw")
 
 [node name="player" parent="." instance=ExtResource("1_vysco")]
 position = Vector2(249, 189)
-speed = 90
 
 [node name="camera" type="Camera2D" parent="player"]
 limit_left = 0
@@ -1353,3 +1355,15 @@ shape = SubResource("CapsuleShape2D_sii5q")
 
 [node name="tomato" parent="." instance=ExtResource("17_0b144")]
 position = Vector2(281, 305)
+
+[node name="chamomile" parent="." instance=ExtResource("18_teawh")]
+position = Vector2(219, 193)
+
+[node name="chamomile2" parent="." instance=ExtResource("18_teawh")]
+position = Vector2(251, 139)
+
+[node name="purple_crystal" parent="." instance=ExtResource("19_sye37")]
+position = Vector2(287, 227)
+
+[node name="blue_crystal" parent="." instance=ExtResource("20_k0jts")]
+position = Vector2(284, 117)

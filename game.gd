@@ -55,8 +55,8 @@ func _ready() -> void:
 	# foraged
 	items[Type.RED_CAP] = Item.init(Type.RED_CAP, preload("res://entities/foraged/red_cap.tscn"))
 	items[Type.CHAMOMILE] = Item.init(Type.CHAMOMILE, preload("res://entities/foraged/chamomile.tscn"))
-	# items[Type.BLUE_CRYSTAL] = Item.init(Type.BLUE_CRYSTAL, preload("res://entities/foraged/blue_crystal.tscn"))
-	# items[Type.PURPLE_CRYSTAL] = Item.init(Type.BLUE_CRYSTAL, preload("res://entities/foraged/purple_crystal.tscn"))
+	items[Type.BLUE_CRYSTAL] = Item.init(Type.BLUE_CRYSTAL, preload("res://entities/foraged/blue_crystal.tscn"))
+	items[Type.PURPLE_CRYSTAL] = Item.init(Type.BLUE_CRYSTAL, preload("res://entities/foraged/purple_crystal.tscn"))
 
 	# crops
 	items[Type.GARLIC] = Item.init(Type.GARLIC, preload("res://entities/crops/garlic.tscn"))
