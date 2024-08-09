@@ -44,6 +44,7 @@ func plant_seed(plnt: Plant):
 		plant = plnt
 		add_child(plant)
 		plant.set_frame(-1)
+		plant.z_index = 1
 		plant.count = 2 + int(randi() % 10 == 0) # at least 2, 10% chance of 3
 		state = State.SEED
 

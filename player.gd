@@ -57,7 +57,7 @@ func active_item_type() -> Game.Type:
 			tool.interactable = false
 		if tool is Plant:
 			var plant = tool as Plant
-			plant.set_frame(5)
+			plant.set_frame(3)
 			tool.get_node("AnimatedSprite2D").frame = 5
 	return item
 

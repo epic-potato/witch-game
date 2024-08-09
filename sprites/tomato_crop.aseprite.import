@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://drs5epwwebpfe"
+path="res://.godot/imported/tomato_crop.aseprite-333e24550cf213b8ace6a84c2b15e93f.res"
+
+[deps]
+
+source_file="res://sprites/tomato_crop.aseprite"
+dest_files=["res://.godot/imported/tomato_crop.aseprite-333e24550cf213b8ace6a84c2b15e93f.res"]
+
+[params]
+

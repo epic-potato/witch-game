@@ -5,6 +5,7 @@ extends Node
 enum Type {
 	RED_CAP,
 	GARLIC,
+	TOMATO,
 	HOE,
 	WATERING_CAN,
 	NONE,
@@ -16,6 +17,8 @@ func type_to_str(type: Type) -> String:
 			return "red_cap"
 		Type.GARLIC:
 			return "garlic"
+		Type.TOMATO:
+			return "tomato"
 		_:
 			return "unknown"
 
@@ -39,6 +42,7 @@ func _ready() -> void:
 	items.resize(Type.NONE)
 	items[Type.RED_CAP] = Item.init(Type.RED_CAP, preload("res://entities/red_cap.tscn"))
 	items[Type.GARLIC] = Item.init(Type.GARLIC, preload("res://entities/garlic.tscn"))
+	items[Type.TOMATO] = Item.init(Type.TOMATO, preload("res://entities/tomato.tscn"))
 	items[Type.HOE] = Item.init(Type.HOE, preload("res://entities/hoe.tscn"))
 	items[Type.WATERING_CAN] = Item.init(Type.WATERING_CAN, preload("res://entities/watering_can.tscn"))
 

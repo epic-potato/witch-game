@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dnshor2biv22b"]
+[gd_scene load_steps=27 format=3 uid="uid://dnshor2biv22b"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5ug0r"]
 [ext_resource type="PackedScene" uid="uid://cspe43pr2dloh" path="res://entities/player.tscn" id="1_vysco"]
@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://farm.gd" id="12_jxydw"]
 [ext_resource type="Script" path="res://spawner.gd" id="13_4t2uq"]
 [ext_resource type="PackedScene" uid="uid://dpfyotcwa3lar" path="res://entities/garlic.tscn" id="14_aw7k8"]
-[ext_resource type="PackedScene" uid="uid://c8cyiy4df28cc" path="res://entities/watering_can.tscn" id="16_umowf"]
+[ext_resource type="PackedScene" uid="uid://cn0dpd0qladq5" path="res://entities/tomato.tscn" id="17_0b144"]
 [ext_resource type="Texture2D" uid="uid://d0m8te1exhvn1" path="res://biig_garlic.png" id="17_2ehw6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ewv8p"]
@@ -1242,6 +1242,10 @@ sources/4 = SubResource("TileSetAtlasSource_eaef0")
 sources/5 = SubResource("TileSetAtlasSource_4l8dy")
 sources/6 = SubResource("TileSetAtlasSource_2cab7")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sii5q"]
+radius = 2.0
+height = 16.0
+
 [node name="main" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_5ug0r")
@@ -1250,6 +1254,7 @@ script = ExtResource("1_5ug0r")
 script = ExtResource("3_sbb8e")
 
 [node name="TileMap" type="TileMap" parent="."]
+z_index = -1
 position = Vector2(-112, 0)
 tile_set = SubResource("TileSet_1abdx")
 format = 2
@@ -1311,11 +1316,16 @@ position = Vector2(69, 60)
 [node name="red_cap3" parent="." instance=ExtResource("6_4p63c")]
 position = Vector2(130, 352)
 
-[node name="watering_can" parent="." instance=ExtResource("16_umowf")]
+[node name="beeg_garlic" type="RigidBody2D" parent="."]
+position = Vector2(315, 269)
+gravity_scale = 0.0
+lock_rotation = true
+metadata/_edit_group_ = true
 
-[node name="beeg_garlic" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="beeg_garlic"]
 texture_filter = 1
 texture = ExtResource("17_2ehw6")
+offset = Vector2(0, -16)
 metadata/_aseprite_wizard_config_ = {
 "i_mode": 1,
 "keep_anim_length": false,
@@ -1329,3 +1339,11 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://sprites/biig_garlic.aseprite"
 }
 metadata/_aseprite_wizard_source_file_hash_ = "a37a7fd821bfb6a9f1ce9e977374422f"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beeg_garlic"]
+position = Vector2(0, -3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_sii5q")
+
+[node name="tomato" parent="." instance=ExtResource("17_0b144")]
+position = Vector2(281, 305)
