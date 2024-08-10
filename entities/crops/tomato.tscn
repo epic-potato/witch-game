@@ -1,41 +1,41 @@
 [gd_scene load_steps=9 format=3 uid="uid://cn0dpd0qladq5"]
 
 [ext_resource type="Script" path="res://plant.gd" id="1_cco08"]
-[ext_resource type="Texture2D" uid="uid://ycfi3xtrvm2k" path="res://aseprite_out/tomato_crop.png" id="2_62604"]
+[ext_resource type="Texture2D" uid="uid://ycfi3xtrvm2k" path="res://aseprite_out/tomato_crop.png" id="2_jwaag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6mrn"]
 size = Vector2(14.5, 5)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ig04r"]
-atlas = ExtResource("2_62604")
+[sub_resource type="AtlasTexture" id="AtlasTexture_p24at"]
+atlas = ExtResource("2_jwaag")
 region = Rect2(0, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ijgr0"]
-atlas = ExtResource("2_62604")
+[sub_resource type="AtlasTexture" id="AtlasTexture_58rh1"]
+atlas = ExtResource("2_jwaag")
 region = Rect2(16, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1asu6"]
-atlas = ExtResource("2_62604")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykeeo"]
+atlas = ExtResource("2_jwaag")
 region = Rect2(0, 32, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1aprd"]
-atlas = ExtResource("2_62604")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dli34"]
+atlas = ExtResource("2_jwaag")
 region = Rect2(16, 32, 16, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ptf0p"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3deed"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ig04r")
+"texture": SubResource("AtlasTexture_p24at")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ijgr0")
+"texture": SubResource("AtlasTexture_58rh1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1asu6")
+"texture": SubResource("AtlasTexture_ykeeo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1aprd")
+"texture": SubResource("AtlasTexture_dli34")
 }],
 "loop": true,
 "name": &"default",
@@ -58,7 +58,7 @@ shape = SubResource("RectangleShape2D_u6mrn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_ptf0p")
+sprite_frames = SubResource("SpriteFrames_3deed")
 frame = 2
 speed_scale = 0.0
 offset = Vector2(0, -16)

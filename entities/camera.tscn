@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwy4uswjvsanc"]
+
+[ext_resource type="Script" path="res://camera.gd" id="1_lic5l"]
+[ext_resource type="Script" path="res://active_tool.gd" id="2_sk28r"]
+
+[node name="camera" type="Camera2D"]
+limit_left = 0
+limit_top = 0
+limit_right = 4287
+limit_bottom = 3200
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+script = ExtResource("1_lic5l")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="active_tool" type="Node2D" parent="HUD"]
+position = Vector2(912, 495)
+script = ExtResource("2_sk28r")
