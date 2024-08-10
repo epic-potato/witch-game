@@ -75,6 +75,7 @@ func _ready() -> void:
 	scenes.resize(Scene.BREW + 1)
 	scenes[Scene.OUTSIDE] = preload("res://scn_outside.tscn").instantiate()
 	scenes[Scene.COTTAGE] = preload("res://scn_cottage.tscn").instantiate()
+	scenes[Scene.BREW] = preload("res://scn_brewing.tscn").instantiate()
 
 
 func set_farm(_farm: Farm) -> void:

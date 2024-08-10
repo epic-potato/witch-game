@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcva2ugacn2pf"]
+
+[ext_resource type="Texture2D" uid="uid://dv3yr8c6m5n12" path="res://potion_brewing_background v2.png" id="1_1ifn3"]
+[ext_resource type="PackedScene" uid="uid://dwy4uswjvsanc" path="res://entities/camera.tscn" id="2_165no"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxstv"]
+size = Vector2(217, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5q2ed"]
+size = Vector2(232, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_332dn"]
+size = Vector2(180, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54rnu"]
+size = Vector2(214, 158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbn3n"]
+size = Vector2(237, 217)
+
+[node name="scn_brewing" type="Node2D"]
+metadata/_edit_vertical_guides_ = [960.0]
+metadata/_edit_horizontal_guides_ = [540.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(480, 270)
+texture = ExtResource("1_1ifn3")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://sprites/potion_brewing_background v2.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "3df534902aba1665014837b6e8f722d4"
+
+[node name="cauldron" type="Area2D" parent="."]
+position = Vector2(482, 324)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="cauldron"]
+polygon = PackedVector2Array(-76, -65, 83, -65, 84, -31, 126, -16, 163, 20, 179, 65, 175, 126, 151, 170, 122, 189, 67, 209, -6, 209, -92, 196, -136, 161, -160, 100, -159, 37, -126, -6, -78, -31)
+
+[node name="crops" type="Area2D" parent="."]
+position = Vector2(130, 396)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crops"]
+position = Vector2(-21.5, 12.5)
+shape = SubResource("RectangleShape2D_fxstv")
+
+[node name="crystals" type="Area2D" parent="."]
+position = Vector2(811, 331)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crystals"]
+position = Vector2(33, 77)
+shape = SubResource("RectangleShape2D_5q2ed")
+
+[node name="wood" type="Area2D" parent="."]
+position = Vector2(130, 474)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wood"]
+position = Vector2(-40, 32.5)
+shape = SubResource("RectangleShape2D_332dn")
+
+[node name="foraged" type="Area2D" parent="."]
+position = Vector2(107, 83)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="foraged"]
+shape = SubResource("RectangleShape2D_54rnu")
+
+[node name="bottles" type="Area2D" parent="."]
+position = Vector2(802, 86)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottles"]
+position = Vector2(37.5, 23.5)
+shape = SubResource("RectangleShape2D_lbn3n")
+
+[node name="camera" parent="." instance=ExtResource("2_165no")]
