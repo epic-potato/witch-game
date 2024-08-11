@@ -58,6 +58,7 @@ shape = SubResource("CircleShape2D_yrx7p")
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u6ym6")
+frame = 1
 speed_scale = 0.0
 offset = Vector2(0, -8)
 metadata/_aseprite_wizard_config_ = {

@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu71rdj3mmhhs"]
+
+[ext_resource type="Texture2D" uid="uid://bo2sn8pokhs4p" path="res://entities/green_tree.png" id="1_87r1a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1uy8l"]
+radius = 9.0
+
+[node name="tree" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+texture = ExtResource("1_87r1a")
+offset = Vector2(0, -26)
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://sprites/green_tree.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "ee83da130766c299171ef288786b9fca"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, -2)
+shape = SubResource("CircleShape2D_1uy8l")

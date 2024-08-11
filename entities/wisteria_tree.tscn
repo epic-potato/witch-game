@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://pbrmt2fplitj"]
+
+[ext_resource type="Texture2D" uid="uid://c1hgscun7008o" path="res://tree with wisteria.png" id="1_r8s1g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1uy8l"]
+radius = 9.0
+
+[node name="wisteria_tree" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_r8s1g")
+offset = Vector2(0, -26)
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://sprites/tree with wisteria.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "f76ca6a3f930d1edaccf7d78677d670f"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, -2)
+shape = SubResource("CircleShape2D_1uy8l")
