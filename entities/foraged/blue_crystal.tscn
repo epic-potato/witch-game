@@ -1,41 +1,41 @@
 [gd_scene load_steps=9 format=3 uid="uid://civfrcvflvy8b"]
 
 [ext_resource type="Script" path="res://foragable.gd" id="1_dhfym"]
-[ext_resource type="Texture2D" uid="uid://wl42cgsoe6k" path="res://aseprite_out/Crystals.png" id="2_ks47k"]
+[ext_resource type="Texture2D" uid="uid://wl42cgsoe6k" path="res://aseprite_out/Crystals.png" id="2_7hef2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yrx7p"]
 radius = 5.09902
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j0nlj"]
-atlas = ExtResource("2_ks47k")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbb40"]
+atlas = ExtResource("2_7hef2")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ak5wm"]
-atlas = ExtResource("2_ks47k")
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmhi0"]
+atlas = ExtResource("2_7hef2")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qwbx6"]
-atlas = ExtResource("2_ks47k")
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbvni"]
+atlas = ExtResource("2_7hef2")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dblye"]
-atlas = ExtResource("2_ks47k")
+[sub_resource type="AtlasTexture" id="AtlasTexture_docsj"]
+atlas = ExtResource("2_7hef2")
 region = Rect2(16, 16, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2ug1u"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8j6b8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j0nlj")
+"texture": SubResource("AtlasTexture_wbb40")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ak5wm")
+"texture": SubResource("AtlasTexture_pmhi0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qwbx6")
+"texture": SubResource("AtlasTexture_sbvni")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dblye")
+"texture": SubResource("AtlasTexture_docsj")
 }],
 "loop": true,
 "name": &"default",
@@ -57,7 +57,7 @@ shape = SubResource("CircleShape2D_yrx7p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_2ug1u")
+sprite_frames = SubResource("SpriteFrames_8j6b8")
 speed_scale = 0.0
 offset = Vector2(0, -8)
 metadata/_aseprite_wizard_config_ = {
