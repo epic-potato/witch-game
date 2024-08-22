@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bw8o463uiheps"
+path="res://.godot/imported/heritage_tomato.aseprite-e8279e4b63c0ac1a4103bbeae6046b3f.res"
+
+[deps]
+
+source_file="res://sprites/heritage_tomato.aseprite"
+dest_files=["res://.godot/imported/heritage_tomato.aseprite-e8279e4b63c0ac1a4103bbeae6046b3f.res"]
+
+[params]
+

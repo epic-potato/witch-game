@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c31rqc3j0qadc"]
+[gd_scene load_steps=40 format=3 uid="uid://c31rqc3j0qadc"]
 
 [ext_resource type="Script" path="res://scn_cottage.gd" id="1_7fos7"]
 [ext_resource type="Texture2D" uid="uid://ctfpoyautg82n" path="res://sprites/grass_tiles.png" id="2_y6bxv"]
@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bptjiupae8t7e" path="res://sprites/flower_grass_border.png" id="7_8lqbp"]
 [ext_resource type="Texture2D" uid="uid://rwjyg18fvyl" path="res://sprites/grass_tilesheet.png" id="8_gaa1n"]
 [ext_resource type="PackedScene" uid="uid://cspe43pr2dloh" path="res://entities/player.tscn" id="9_pt34f"]
+[ext_resource type="Texture2D" uid="uid://cawl7fa4ed5i5" path="res://aseprite_out/glass_cauldron_top_down_animated_v3.png" id="10_4k57k"]
 [ext_resource type="PackedScene" uid="uid://dwy4uswjvsanc" path="res://entities/camera.tscn" id="10_m7rag"]
 [ext_resource type="PackedScene" uid="uid://virgvtyorqwy" path="res://gate.tscn" id="11_78hn5"]
-[ext_resource type="Texture2D" uid="uid://cigb6al3rkvf0" path="res://glass_cauldron_v2.png" id="12_ucuqo"]
 [ext_resource type="Script" path="res://bubbles.gd" id="13_ae8np"]
 [ext_resource type="PackedScene" uid="uid://cyffmvqn6c6he" path="res://entities/bubble.tscn" id="13_xukv6"]
 
@@ -1243,9 +1243,100 @@ sources/6 = SubResource("TileSetAtlasSource_2cab7")
 [sub_resource type="CircleShape2D" id="CircleShape2D_ndbv3"]
 radius = 55.0091
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_651mn"]
+atlas = ExtResource("10_4k57k")
+region = Rect2(0, 0, 186, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2b2f"]
+atlas = ExtResource("10_4k57k")
+region = Rect2(186, 0, 186, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jxxl"]
+atlas = ExtResource("10_4k57k")
+region = Rect2(372, 0, 186, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f16v"]
+atlas = ExtResource("10_4k57k")
+region = Rect2(558, 0, 186, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0ecx"]
+atlas = ExtResource("10_4k57k")
+region = Rect2(0, 156, 186, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olyhm"]
+atlas = ExtResource("10_4k57k")
+region = Rect2(186, 156, 186, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe8ox"]
+atlas = ExtResource("10_4k57k")
+region = Rect2(372, 156, 186, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gofpo"]
+atlas = ExtResource("10_4k57k")
+region = Rect2(558, 156, 186, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcek0"]
+atlas = ExtResource("10_4k57k")
+region = Rect2(0, 312, 186, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8twj1"]
+atlas = ExtResource("10_4k57k")
+region = Rect2(186, 312, 186, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2iko"]
+atlas = ExtResource("10_4k57k")
+region = Rect2(372, 312, 186, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v57l"]
+atlas = ExtResource("10_4k57k")
+region = Rect2(558, 312, 186, 156)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32fds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_651mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2b2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jxxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f16v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0ecx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olyhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe8ox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gofpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcek0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8twj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2iko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v57l")
+}],
+"loop": true,
+"name": &"Loop",
+"speed": 7.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xxcto"]
-radius = 5.0
-height = 46.0
+height = 68.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3e1d"]
 size = Vector2(32, 16)
@@ -1274,28 +1365,31 @@ scene = 2
 position = Vector2(0, -22)
 shape = SubResource("CircleShape2D_ndbv3")
 
-[node name="Sprite2D" type="Sprite2D" parent="cauldron"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="cauldron"]
 texture_filter = 1
-texture = ExtResource("12_ucuqo")
-offset = Vector2(0, -32)
+position = Vector2(12, -36)
+sprite_frames = SubResource("SpriteFrames_32fds")
+animation = &"Loop"
+autoplay = "Loop"
 metadata/_aseprite_wizard_config_ = {
-"i_mode": 1,
-"keep_anim_length": false,
 "layer": "",
 "o_ex_p": "",
-"o_folder": "",
+"o_folder": "res://aseprite_out",
 "o_name": "",
 "only_visible": false,
-"player": "",
 "slice": "",
-"source": "res://sprites/glass_cauldron_v2.aseprite"
+"source": "res://sprites/glass_cauldron_top_down_animated_v3.aseprite"
 }
-metadata/_aseprite_wizard_source_file_hash_ = "0aa9275ecf7c540f5220428d386db8d0"
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "114aaa624ba00e9ae30d8dc1011e1106"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="cauldron"]
+position = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cauldron/StaticBody2D"]
-position = Vector2(0, -9)
+position = Vector2(0, 3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xxcto")
 
@@ -1314,9 +1408,8 @@ position = Vector2(2, 7)
 shape = SubResource("RectangleShape2D_g3e1d")
 
 [node name="bubbles" type="Node2D" parent="."]
-position = Vector2(466, 207)
+position = Vector2(466, 268)
 script = ExtResource("13_ae8np")
-target = Vector2(0, 180)
 
 [node name="path" type="Path2D" parent="bubbles"]
 visible = false
@@ -1349,19 +1442,37 @@ position = Vector2(511, 207)
 progress = 90.0
 
 [node name="bubble" parent="bubbles" instance=ExtResource("13_xukv6")]
-position = Vector2(-45, 0)
+position = Vector2(-45, -66)
+offset = -4
+transition_time = 2.0
+jitter = 0.8
 
 [node name="bubble2" parent="bubbles" instance=ExtResource("13_xukv6")]
-position = Vector2(-27, 0)
+position = Vector2(-27, -66)
+offset = -4
+transition_time = 2.0
+jitter = 0.8
 
 [node name="bubble3" parent="bubbles" instance=ExtResource("13_xukv6")]
-position = Vector2(-9, 0)
+position = Vector2(-9, -66)
+offset = -4
+transition_time = 2.0
+jitter = 0.8
 
 [node name="bubble4" parent="bubbles" instance=ExtResource("13_xukv6")]
-position = Vector2(9, 0)
+position = Vector2(9, -66)
+offset = -4
+transition_time = 2.0
+jitter = 0.8
 
 [node name="bubble5" parent="bubbles" instance=ExtResource("13_xukv6")]
-position = Vector2(27, 0)
+position = Vector2(27, -66)
+offset = -4
+transition_time = 2.0
+jitter = 0.8
 
 [node name="bubble6" parent="bubbles" instance=ExtResource("13_xukv6")]
-position = Vector2(45, 0)
+position = Vector2(45, -66)
+offset = -4
+transition_time = 2.0
+jitter = 0.8

@@ -128,9 +128,9 @@ func handle_visuals():
 	guide.visible = tool_is_active
 	match state:
 		State.IDLE:
-			sprite.play("idle_look_up")
-		State.WALK:
 			sprite.play("idle_bounce")
+		State.WALK:
+			sprite.play("witch_walk")
 
 func get_gamepad_pos():
 	var dir := get_gamepad_axes().normalized()
