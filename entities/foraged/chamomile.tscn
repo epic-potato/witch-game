@@ -1,39 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ieuh12g4kum"]
+[gd_scene load_steps=4 format=3 uid="uid://ieuh12g4kum"]
 
 [ext_resource type="Script" path="res://scripts/foragable.gd" id="1_to5dm"]
-[ext_resource type="Texture2D" uid="uid://bgfms6afh6vu1" path="res://aseprite_out/Chamomile.png" id="2_wippw"]
+[ext_resource type="SpriteFrames" uid="uid://hoiuribgegx5" path="res://sprites/Chamomile.aseprite" id="2_d7tim"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yrx7p"]
 radius = 5.09902
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u3844"]
-atlas = ExtResource("2_wippw")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jgk2o"]
-atlas = ExtResource("2_wippw")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c10w6"]
-atlas = ExtResource("2_wippw")
-region = Rect2(0, 16, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_26wv2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u3844")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jgk2o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c10w6")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
 
 [node name="chamomile" type="Area2D"]
 y_sort_enabled = true
@@ -49,7 +20,7 @@ shape = SubResource("CircleShape2D_yrx7p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_26wv2")
+sprite_frames = ExtResource("2_d7tim")
 speed_scale = 0.0
 offset = Vector2(0, -8)
 metadata/_aseprite_wizard_config_ = {

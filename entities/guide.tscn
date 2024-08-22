@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dcvend5fjs46k"]
 
-[ext_resource type="Texture2D" uid="uid://britqfxooph12" path="res://aseprite_out/guide.png" id="1_kqlck"]
+[ext_resource type="Texture2D" uid="uid://dh7jfnmk84021" path="res://sprites/guide.aseprite.png" id="1_ve3th"]
 [ext_resource type="Texture2D" uid="uid://b531r3hk1e22p" path="res://textures/magic_05.png" id="2_v6vxw"]
 [ext_resource type="Texture2D" uid="uid://e1stlumv5t06" path="res://textures/star_09.png" id="3_l5vsm"]
 [ext_resource type="Texture2D" uid="uid://cq50k0x2qgcvj" path="res://textures/magic_04.png" id="4_c5pdp"]
@@ -22,7 +22,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_6rhnc")
-texture = ExtResource("1_kqlck")
+texture = ExtResource("1_ve3th")
 metadata/_aseprite_wizard_config_ = {
 "i_mode": 1,
 "keep_anim_length": false,

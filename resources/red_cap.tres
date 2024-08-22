@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://crq7qmv5ugks4"]
+
+[ext_resource type="SpriteFrames" uid="uid://cpndg86cj185k" path="res://sprites/red_cap.aseprite" id="1_lwufh"]
+[ext_resource type="Script" path="res://scripts/item_base.gd" id="1_we6pf"]
+
+[resource]
+script = ExtResource("1_we6pf")
+name = "Red Cap"
+is_crop = false
+is_ingredient = true
+frames = ExtResource("1_lwufh")

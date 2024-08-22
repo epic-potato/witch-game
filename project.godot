@@ -33,7 +33,7 @@ movie_writer/movie_file="/home/soggy/projects/witch/screen_caps/capture.avi"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/gdfxr/plugin.cfg")
+enabled=PackedStringArray("res://addons/gdfxr/plugin.cfg", "res://addons/godot-4-importality-ecc9baa4561de8076e73f68636fee5274ac3a6b9/addons/nklbdev.importality/plugin.cfg")
 
 [input]
 

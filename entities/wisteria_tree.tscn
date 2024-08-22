@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://pbrmt2fplitj"]
 
-[ext_resource type="Texture2D" uid="uid://c1hgscun7008o" path="res://tree with wisteria.png" id="1_r8s1g"]
+[ext_resource type="Texture2D" uid="uid://c7wveeleuaj63" path="res://sprites/tree with wisteria.aseprite.png" id="1_kspkt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1uy8l"]
 radius = 9.0
@@ -10,7 +10,7 @@ y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_r8s1g")
+texture = ExtResource("1_kspkt")
 offset = Vector2(0, -26)
 metadata/_aseprite_wizard_config_ = {
 "i_mode": 1,

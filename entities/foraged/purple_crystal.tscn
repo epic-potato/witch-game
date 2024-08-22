@@ -1,46 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4g63wcpnr5fy"]
+[gd_scene load_steps=4 format=3 uid="uid://d4g63wcpnr5fy"]
 
 [ext_resource type="Script" path="res://scripts/foragable.gd" id="1_iwq3o"]
-[ext_resource type="Texture2D" uid="uid://wl42cgsoe6k" path="res://aseprite_out/Crystals.png" id="2_svjb2"]
+[ext_resource type="SpriteFrames" uid="uid://b1pt7fq0q5qvv" path="res://sprites/Crystals.aseprite" id="2_vg73w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yrx7p"]
 radius = 5.09902
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v1vdt"]
-atlas = ExtResource("2_svjb2")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vrhbl"]
-atlas = ExtResource("2_svjb2")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3h6s8"]
-atlas = ExtResource("2_svjb2")
-region = Rect2(0, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nrrcu"]
-atlas = ExtResource("2_svjb2")
-region = Rect2(16, 16, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_u6ym6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v1vdt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vrhbl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3h6s8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nrrcu")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
 
 [node name="purple_crystal" type="Area2D"]
 y_sort_enabled = true
@@ -57,7 +21,7 @@ shape = SubResource("CircleShape2D_yrx7p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_u6ym6")
+sprite_frames = ExtResource("2_vg73w")
 frame = 1
 speed_scale = 0.0
 offset = Vector2(0, -8)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cu71rdj3mmhhs"]
 
-[ext_resource type="Texture2D" uid="uid://bo2sn8pokhs4p" path="res://entities/green_tree.png" id="1_87r1a"]
+[ext_resource type="Texture2D" uid="uid://dpibjp8i1xlaf" path="res://sprites/green_tree.aseprite.png" id="1_0emcu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1uy8l"]
 radius = 9.0
@@ -11,7 +11,7 @@ y_sort_enabled = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
-texture = ExtResource("1_87r1a")
+texture = ExtResource("1_0emcu")
 offset = Vector2(0, -26)
 metadata/_aseprite_wizard_config_ = {
 "i_mode": 1,
