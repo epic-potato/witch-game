@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c8vmckdnjojrs"]
 
-[ext_resource type="Script" path="res://entities/plot.gd" id="1_x0c6v"]
+[ext_resource type="Script" path="res://scripts/plot.gd" id="1_x0c6v"]
 [ext_resource type="Texture2D" uid="uid://cv02ttdh53fql" path="res://aseprite_out/tilled_dirt_and_planting_holes.png" id="2_t0ka5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eejnn"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=40 format=3 uid="uid://c31rqc3j0qadc"]
 
-[ext_resource type="Script" path="res://scn_cottage.gd" id="1_7fos7"]
+[ext_resource type="Script" path="res://scripts/scn_cottage.gd" id="1_v1tj4"]
 [ext_resource type="Texture2D" uid="uid://ctfpoyautg82n" path="res://sprites/grass_tiles.png" id="2_y6bxv"]
 [ext_resource type="Texture2D" uid="uid://c6dakuoo22c43" path="res://sprites/blocking_ts.png" id="3_p25hb"]
 [ext_resource type="Texture2D" uid="uid://b1aeakxu7m5nk" path="res://sprites/flower_grass_path_test.png" id="4_qdom0"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cawl7fa4ed5i5" path="res://aseprite_out/glass_cauldron_top_down_animated_v3.png" id="10_4k57k"]
 [ext_resource type="PackedScene" uid="uid://dwy4uswjvsanc" path="res://entities/camera.tscn" id="10_m7rag"]
 [ext_resource type="PackedScene" uid="uid://virgvtyorqwy" path="res://gate.tscn" id="11_78hn5"]
-[ext_resource type="Script" path="res://bubbles.gd" id="13_ae8np"]
+[ext_resource type="Script" path="res://scripts/bubbles.gd" id="13_fdl0g"]
 [ext_resource type="PackedScene" uid="uid://cyffmvqn6c6he" path="res://entities/bubble.tscn" id="13_xukv6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ewv8p"]
@@ -1349,7 +1349,7 @@ point_count = 9
 
 [node name="scn_cottage" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_7fos7")
+script = ExtResource("1_v1tj4")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
@@ -1409,7 +1409,7 @@ shape = SubResource("RectangleShape2D_g3e1d")
 
 [node name="bubbles" type="Node2D" parent="."]
 position = Vector2(466, 268)
-script = ExtResource("13_ae8np")
+script = ExtResource("13_fdl0g")
 
 [node name="path" type="Path2D" parent="bubbles"]
 visible = false
@@ -1443,36 +1443,18 @@ progress = 90.0
 
 [node name="bubble" parent="bubbles" instance=ExtResource("13_xukv6")]
 position = Vector2(-45, -66)
-offset = -4
-transition_time = 2.0
-jitter = 0.8
 
 [node name="bubble2" parent="bubbles" instance=ExtResource("13_xukv6")]
 position = Vector2(-27, -66)
-offset = -4
-transition_time = 2.0
-jitter = 0.8
 
 [node name="bubble3" parent="bubbles" instance=ExtResource("13_xukv6")]
 position = Vector2(-9, -66)
-offset = -4
-transition_time = 2.0
-jitter = 0.8
 
 [node name="bubble4" parent="bubbles" instance=ExtResource("13_xukv6")]
 position = Vector2(9, -66)
-offset = -4
-transition_time = 2.0
-jitter = 0.8
 
 [node name="bubble5" parent="bubbles" instance=ExtResource("13_xukv6")]
 position = Vector2(27, -66)
-offset = -4
-transition_time = 2.0
-jitter = 0.8
 
 [node name="bubble6" parent="bubbles" instance=ExtResource("13_xukv6")]
 position = Vector2(45, -66)
-offset = -4
-transition_time = 2.0
-jitter = 0.8

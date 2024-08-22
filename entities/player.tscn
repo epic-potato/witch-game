@@ -1,6 +1,6 @@
 [gd_scene load_steps=43 format=3 uid="uid://cspe43pr2dloh"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_d8h3g"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_t6v4e"]
 [ext_resource type="Texture2D" uid="uid://dvig6up0vdsyy" path="res://aseprite_out/witch_animations_v4.png" id="2_jsxy1"]
 [ext_resource type="AudioStream" uid="uid://b1kbau4juy3v8" path="res://sounds/rustle.wav" id="4_o5xm2"]
 [ext_resource type="FontFile" uid="uid://c6o2n04gl288r" path="res://fonts/m3x6.ttf" id="6_jet3w"]
@@ -449,7 +449,7 @@ font = ExtResource("6_jet3w")
 
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
-script = ExtResource("1_d8h3g")
+script = ExtResource("1_t6v4e")
 metadata/_edit_group_ = true
 
 [node name="collider" type="CollisionShape2D" parent="."]
@@ -462,7 +462,7 @@ y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_oshl7")
 animation = &"witch_walk"
-frame_progress = 0.509264
+frame_progress = 0.832976
 offset = Vector2(2, -16)
 metadata/_aseprite_wizard_config_ = {
 "layer": "",

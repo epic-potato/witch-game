@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dpfyotcwa3lar"]
 
-[ext_resource type="Script" path="res://plant.gd" id="1_cfxtn"]
+[ext_resource type="Script" path="res://scripts/plant.gd" id="1_cfxtn"]
 [ext_resource type="Texture2D" uid="uid://2qri0mh63exb" path="res://aseprite_out/garlic_crop.png" id="2_xyuav"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yrx7p"]

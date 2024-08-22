@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ieuh12g4kum"]
 
-[ext_resource type="Script" path="res://foragable.gd" id="1_to5dm"]
+[ext_resource type="Script" path="res://scripts/foragable.gd" id="1_to5dm"]
 [ext_resource type="Texture2D" uid="uid://bgfms6afh6vu1" path="res://aseprite_out/Chamomile.png" id="2_wippw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yrx7p"]

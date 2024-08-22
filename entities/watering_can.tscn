@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8cyiy4df28cc"]
 
 [ext_resource type="Texture2D" uid="uid://pjuhfuqfw1ad" path="res://aseprite_out/watering_can_v2.png" id="1_ojc4n"]
-[ext_resource type="Script" path="res://watering_can.gd" id="2_52gxj"]
+[ext_resource type="Script" path="res://scripts/watering_can.gd" id="2_52gxj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6sjg"]
 atlas = ExtResource("1_ojc4n")

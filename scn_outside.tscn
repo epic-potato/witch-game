@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://ckypkaerks4ov"]
 
-[ext_resource type="Script" path="res://scn_outside.gd" id="1_tr68j"]
+[ext_resource type="Script" path="res://scripts/scn_outside.gd" id="1_s2b15"]
 [ext_resource type="Texture2D" uid="uid://ctfpoyautg82n" path="res://sprites/grass_tiles.png" id="2_dwphm"]
 [ext_resource type="Texture2D" uid="uid://c6dakuoo22c43" path="res://sprites/blocking_ts.png" id="3_duvdi"]
 [ext_resource type="Texture2D" uid="uid://b1aeakxu7m5nk" path="res://sprites/flower_grass_path_test.png" id="4_mjhwk"]
@@ -9,10 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://bptjiupae8t7e" path="res://sprites/flower_grass_border.png" id="7_ijkm8"]
 [ext_resource type="Texture2D" uid="uid://rwjyg18fvyl" path="res://sprites/grass_tilesheet.png" id="8_fmlir"]
 [ext_resource type="Texture2D" uid="uid://dwchweogm35qx" path="res://sprites/grass_tilesheet_full.png" id="9_05uqv"]
-[ext_resource type="Script" path="res://farm.gd" id="9_6cj5f"]
+[ext_resource type="Script" path="res://scripts/farm.gd" id="10_2ogcm"]
 [ext_resource type="PackedScene" uid="uid://cspe43pr2dloh" path="res://entities/player.tscn" id="10_6bqln"]
 [ext_resource type="PackedScene" uid="uid://dwy4uswjvsanc" path="res://entities/camera.tscn" id="11_kcoj2"]
-[ext_resource type="Script" path="res://spawner.gd" id="12_xs7bq"]
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="13_ocjem"]
 [ext_resource type="PackedScene" uid="uid://e2i5b6epgqkp" path="res://entities/foraged/red_cap.tscn" id="13_purkw"]
 [ext_resource type="PackedScene" uid="uid://dpfyotcwa3lar" path="res://entities/crops/garlic.tscn" id="14_5825u"]
 [ext_resource type="Texture2D" uid="uid://tq32mbou2c3w" path="res://aseprite_out/biig_garlic.png" id="15_57brk"]
@@ -1664,7 +1664,7 @@ size = Vector2(32, 9)
 
 [node name="scn_outside" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_tr68j")
+script = ExtResource("1_s2b15")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
@@ -1675,7 +1675,7 @@ layer_0/tile_data = PackedInt32Array(7, 196609, 0, 65543, 196609, 0, 12976135, 1
 [node name="farm" type="Node2D" parent="."]
 z_index = -1
 z_as_relative = false
-script = ExtResource("9_6cj5f")
+script = ExtResource("10_2ogcm")
 
 [node name="player" parent="." instance=ExtResource("10_6bqln")]
 position = Vector2(416, 251)
@@ -1686,7 +1686,7 @@ target_dimensions = Vector2i(480, 270)
 [node name="red_cap_spawner" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(1858, 171)
-script = ExtResource("12_xs7bq")
+script = ExtResource("13_ocjem")
 scene = ExtResource("13_purkw")
 max_distance = 64.0
 rate = 2.0
@@ -1694,7 +1694,7 @@ rate = 2.0
 [node name="red_cap_spawner2" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(1007, 1486)
-script = ExtResource("12_xs7bq")
+script = ExtResource("13_ocjem")
 scene = ExtResource("13_purkw")
 max_distance = 64.0
 rate = 2.0
@@ -1703,7 +1703,7 @@ rate = 2.0
 visible = false
 y_sort_enabled = true
 position = Vector2(124, 112)
-script = ExtResource("12_xs7bq")
+script = ExtResource("13_ocjem")
 scene = ExtResource("14_5825u")
 max_distance = 64.0
 

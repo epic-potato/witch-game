@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cn0dpd0qladq5"]
 
-[ext_resource type="Script" path="res://plant.gd" id="1_cco08"]
+[ext_resource type="Script" path="res://scripts/plant.gd" id="1_cco08"]
 [ext_resource type="Texture2D" uid="uid://ycfi3xtrvm2k" path="res://aseprite_out/tomato_crop.png" id="2_jwaag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6mrn"]
