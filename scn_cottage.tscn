@@ -1252,9 +1252,9 @@ size = Vector2(32, 16)
 
 [sub_resource type="Curve2D" id="Curve2D_65xyb"]
 _data = {
-"points": PackedVector2Array(-53.6911, 6.45416, 0, 0, 421, 207, 0, 0, 0, 0, 439, 207, 0, 0, 0, 0, 457, 207, 0, 0, 0, 0, 475, 207, 0, 0, 0, 0, 493, 207, 0, 0, 0, 0, 511, 207, 2.69713, 19.2381, -2.69713, -19.2381, 553, 193, -7.94817, -29.6444, 7.94817, 29.6444, 400, 199, -57.4613, 14.996, 57.4613, -14.996, 509, 219, 15.2447, -11.7185, -15.2447, 11.7185, 477, 179, -5.92742, -59.71, 5.92742, 59.71, 466, 259)
+"points": PackedVector2Array(-53.6911, 6.45416, 0, 0, 421, 207, 0, 0, 0, 0, 439, 207, 0, 0, 0, 0, 457, 207, 0, 0, 0, 0, 475, 207, 0, 0, 0, 0, 493, 207, 0, 0, 0, 0, 511, 207, -0.866464, 44.2946, 0.866464, -44.2946, 531, 169, -0.511859, -32.7578, 0.511859, 32.7578, 465, 170, -0.641733, -58.9672, 0.641733, 58.9672, 466, 259)
 }
-point_count = 11
+point_count = 9
 
 [node name="scn_cottage" type="Node2D"]
 y_sort_enabled = true
@@ -1316,8 +1316,10 @@ shape = SubResource("RectangleShape2D_g3e1d")
 [node name="bubbles" type="Node2D" parent="."]
 position = Vector2(466, 207)
 script = ExtResource("13_ae8np")
+target = Vector2(0, 180)
 
 [node name="path" type="Path2D" parent="bubbles"]
+visible = false
 position = Vector2(-466, -207)
 curve = SubResource("Curve2D_65xyb")
 
@@ -1326,34 +1328,40 @@ position = Vector2(421, 207)
 rotates = false
 loop = false
 
-[node name="bubble" parent="bubbles/path/follow1" instance=ExtResource("13_xukv6")]
-
 [node name="follow2" type="PathFollow2D" parent="bubbles/path"]
 position = Vector2(439, 207)
 progress = 18.0
-
-[node name="bubble" parent="bubbles/path/follow2" instance=ExtResource("13_xukv6")]
 
 [node name="follow3" type="PathFollow2D" parent="bubbles/path"]
 position = Vector2(457, 207)
 progress = 36.0
 
-[node name="bubble" parent="bubbles/path/follow3" instance=ExtResource("13_xukv6")]
-
 [node name="follow4" type="PathFollow2D" parent="bubbles/path"]
 position = Vector2(475, 207)
 progress = 54.0
-
-[node name="bubble" parent="bubbles/path/follow4" instance=ExtResource("13_xukv6")]
 
 [node name="follow5" type="PathFollow2D" parent="bubbles/path"]
 position = Vector2(493, 207)
 progress = 72.0
 
-[node name="bubble" parent="bubbles/path/follow5" instance=ExtResource("13_xukv6")]
-
 [node name="follow6" type="PathFollow2D" parent="bubbles/path"]
 position = Vector2(511, 207)
 progress = 90.0
 
-[node name="bubble" parent="bubbles/path/follow6" instance=ExtResource("13_xukv6")]
+[node name="bubble" parent="bubbles" instance=ExtResource("13_xukv6")]
+position = Vector2(-45, 0)
+
+[node name="bubble2" parent="bubbles" instance=ExtResource("13_xukv6")]
+position = Vector2(-27, 0)
+
+[node name="bubble3" parent="bubbles" instance=ExtResource("13_xukv6")]
+position = Vector2(-9, 0)
+
+[node name="bubble4" parent="bubbles" instance=ExtResource("13_xukv6")]
+position = Vector2(9, 0)
+
+[node name="bubble5" parent="bubbles" instance=ExtResource("13_xukv6")]
+position = Vector2(27, 0)
+
+[node name="bubble6" parent="bubbles" instance=ExtResource("13_xukv6")]
+position = Vector2(45, 0)

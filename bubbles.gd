@@ -1,19 +1,18 @@
 extends Node2D
 
 
+@export var target: Vector2
+
 var brew := false
 var bubbles: Array[Bubble] = []
-var followers: Array[PathFollow2D] = []
 
 
 func _ready() -> void:
-	var path_children = get_node("path").get_children()
+	var children = get_children()
 
-	for follower in path_children:
-		followers.append(follower)
-		var bubble = follower.get_node("bubble")
-		if bubble is Bubble:
-			bubbles.append(bubble)
+	for child in children:
+		if child is Bubble:
+			bubbles.append(child as Bubble)
 
 
 func _process(dt: float) -> void:
@@ -21,5 +20,6 @@ func _process(dt: float) -> void:
 		brew = true
 
 	if brew:
-		for follower in followers:
-			follower.progress += dt * 300
+		for bubble in bubbles:
+			bubble.global_position.x = lerpf(bubble.global_position.x, global_position.x + target.x, dt * 6)
+			bubble.global_position.y = lerpf(bubble.global_position.y, global_position.y + target.y, dt)
