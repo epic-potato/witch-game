@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://d1jwae1keqfcp"
+path="res://.godot/imported/shadow.aseprite-011b6e9bba149f13cf46e2803a9e5b98.res"
+
+[deps]
+
+source_file="res://sprites/shadow.aseprite"
+dest_files=["res://.godot/imported/shadow.aseprite-011b6e9bba149f13cf46e2803a9e5b98.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

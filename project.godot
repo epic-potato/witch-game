@@ -23,8 +23,10 @@ game="*res://scripts/game.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/size/resizable=false
 window/stretch/scale_mode="integer"
+window/vsync/vsync_mode=0
 mouse_cursor/custom_image="res://sprites/cursor.png"
 
 [editor]
@@ -33,7 +35,7 @@ movie_writer/movie_file="/home/soggy/projects/witch/screen_caps/capture.avi"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gdfxr/plugin.cfg", "res://addons/godot-4-importality-ecc9baa4561de8076e73f68636fee5274ac3a6b9/addons/nklbdev.importality/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/gdfxr/plugin.cfg")
 
 [input]
 

@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://scripts/farm.gd" id="10_2ogcm"]
 [ext_resource type="PackedScene" uid="uid://cspe43pr2dloh" path="res://entities/player.tscn" id="10_6bqln"]
 [ext_resource type="PackedScene" uid="uid://dwy4uswjvsanc" path="res://entities/camera.tscn" id="11_kcoj2"]
-[ext_resource type="Texture2D" uid="uid://cu8pl537q7m3v" path="res://sprites/biig_garlic.aseprite.png" id="12_kv028"]
+[ext_resource type="Texture2D" uid="uid://bj5vxb7rp2n7b" path="res://sprites/biig_garlic.aseprite" id="12_m3deb"]
 [ext_resource type="Script" path="res://scripts/spawner.gd" id="13_ocjem"]
 [ext_resource type="PackedScene" uid="uid://e2i5b6epgqkp" path="res://entities/foraged/red_cap.tscn" id="13_purkw"]
 [ext_resource type="PackedScene" uid="uid://dpfyotcwa3lar" path="res://entities/crops/garlic.tscn" id="14_5825u"]
@@ -700,7 +700,6 @@ script = ExtResource("10_2ogcm")
 position = Vector2(416, 251)
 
 [node name="camera" parent="player" instance=ExtResource("11_kcoj2")]
-target_dimensions = Vector2i(480, 270)
 
 [node name="red_cap_spawner" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -753,7 +752,7 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="beeg_garlic"]
 texture_filter = 1
 position = Vector2(1, -1)
-texture = ExtResource("12_kv028")
+texture = ExtResource("12_m3deb")
 offset = Vector2(0, -16)
 metadata/_aseprite_wizard_config_ = {
 "i_mode": 1,

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cspe43pr2dloh"]
+[gd_scene load_steps=10 format=3 uid="uid://cspe43pr2dloh"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_t6v4e"]
 [ext_resource type="SpriteFrames" uid="uid://btwnixm6vvcmi" path="res://sprites/witch_animations_v4.aseprite" id="2_8yed4"]
+[ext_resource type="Texture2D" uid="uid://dmovrcrc5mgr0" path="res://sprites/shadow.png" id="2_akb7e"]
 [ext_resource type="AudioStream" uid="uid://b1kbau4juy3v8" path="res://sounds/rustle.wav" id="4_o5xm2"]
 [ext_resource type="FontFile" uid="uid://c6o2n04gl288r" path="res://fonts/m3x6.ttf" id="6_jet3w"]
 [ext_resource type="PackedScene" uid="uid://dcvend5fjs46k" path="res://entities/guide.tscn" id="6_t55h6"]
@@ -25,6 +26,11 @@ metadata/_edit_group_ = true
 z_index = 1
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_p30i6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.5, 0)
+scale = Vector2(0.90625, 1)
+texture = ExtResource("2_akb7e")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true

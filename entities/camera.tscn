@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwy4uswjvsanc"]
+[gd_scene load_steps=5 format=3 uid="uid://dwy4uswjvsanc"]
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_lic5l"]
 [ext_resource type="Script" path="res://scripts/active_tool.gd" id="2_sk28r"]
+[ext_resource type="FontFile" uid="uid://bxsgv5jph0mx5" path="res://fonts/alagard.ttf" id="3_kstej"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qsxxw"]
+font = ExtResource("3_kstej")
 
 [node name="camera" type="Camera2D"]
 limit_left = 0
@@ -11,6 +15,8 @@ limit_bottom = 3200
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 script = ExtResource("1_lic5l")
+metadata/_edit_vertical_guides_ = [960.0]
+metadata/_edit_horizontal_guides_ = [540.0]
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
@@ -20,3 +26,9 @@ current = true
 [node name="active_tool" type="Node2D" parent="HUD"]
 position = Vector2(912, 495)
 script = ExtResource("2_sk28r")
+
+[node name="fps_label" type="Label" parent="HUD"]
+offset_right = 88.0
+offset_bottom = 15.0
+text = "FPS: 20"
+label_settings = SubResource("LabelSettings_qsxxw")

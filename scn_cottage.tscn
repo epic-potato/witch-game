@@ -213,7 +213,6 @@ position = Vector2(531, 294)
 [node name="camera" parent="player" instance=ExtResource("10_m7rag")]
 limit_right = 960
 limit_bottom = 540
-target_dimensions = Vector2i(480, 270)
 
 [node name="gate" parent="." instance=ExtResource("11_78hn5")]
 
