@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cske7bqhqjfaj"
-path="res://.godot/imported/tomato_crop.aseprite.png-1c2bb14f1b0dae4be2cee20d3872e16e.ctex"
+uid="uid://bcevhokjsocec"
+path="res://.godot/imported/glimmer3.png-baa7d59c9115c78a116d88729c80722c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tomato_crop.aseprite.png"
-dest_files=["res://.godot/imported/tomato_crop.aseprite.png-1c2bb14f1b0dae4be2cee20d3872e16e.ctex"]
+source_file="res://sprites/particles/glimmer3.png"
+dest_files=["res://.godot/imported/glimmer3.png-baa7d59c9115c78a116d88729c80722c.ctex"]
 
 [params]
 

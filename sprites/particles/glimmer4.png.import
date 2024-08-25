@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh7jfnmk84021"
-path="res://.godot/imported/guide.aseprite.png-c3c7b64730f895429449215f0024f0b5.ctex"
+uid="uid://dnidu75mhhwtm"
+path="res://.godot/imported/glimmer4.png-563b6c25d2b6c4151d15b8685f1c8ba2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/guide.aseprite.png"
-dest_files=["res://.godot/imported/guide.aseprite.png-c3c7b64730f895429449215f0024f0b5.ctex"]
+source_file="res://sprites/particles/glimmer4.png"
+dest_files=["res://.godot/imported/glimmer4.png-563b6c25d2b6c4151d15b8685f1c8ba2.ctex"]
 
 [params]
 

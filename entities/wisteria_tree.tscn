@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://pbrmt2fplitj"]
+[gd_scene load_steps=4 format=3 uid="uid://pbrmt2fplitj"]
 
 [ext_resource type="Texture2D" uid="uid://c7wveeleuaj63" path="res://sprites/tree with wisteria.aseprite.png" id="1_kspkt"]
+[ext_resource type="PackedScene" uid="uid://dj5bj87uyua4m" path="res://shadow.tscn" id="2_fnro8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1uy8l"]
 radius = 9.0
@@ -11,7 +12,7 @@ y_sort_enabled = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_kspkt")
-offset = Vector2(0, -26)
+offset = Vector2(-3, -26)
 metadata/_aseprite_wizard_config_ = {
 "i_mode": 1,
 "keep_anim_length": false,
@@ -31,3 +32,7 @@ metadata/_aseprite_wizard_source_file_hash_ = "f76ca6a3f930d1edaccf7d78677d670f"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-1, -2)
 shape = SubResource("CircleShape2D_1uy8l")
+
+[node name="shadow" parent="." instance=ExtResource("2_fnro8")]
+position = Vector2(-3, 5)
+scale = Vector2(0.34375, 0.875)

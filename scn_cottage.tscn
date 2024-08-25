@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://c31rqc3j0qadc"]
+[gd_scene load_steps=18 format=3 uid="uid://c31rqc3j0qadc"]
 
 [ext_resource type="Script" path="res://scripts/scn_cottage.gd" id="1_v1tj4"]
+[ext_resource type="PackedScene" uid="uid://besy82ei5saeb" path="res://shadow_group.tscn" id="2_47hqg"]
 [ext_resource type="Texture2D" uid="uid://cwtb5tqp7p8rh" path="res://sprites/magical_patio.aseprite" id="3_853be"]
 [ext_resource type="Texture2D" uid="uid://m75xmd3iyth5" path="res://sprites/blocking_ts.aseprite" id="3_dx6sv"]
 [ext_resource type="SpriteFrames" uid="uid://cqdw1fvbdbv4h" path="res://sprites/glass_cauldron_top_down_animated_v3.aseprite" id="5_k3o7k"]
@@ -164,6 +165,8 @@ point_count = 9
 [node name="scn_cottage" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_v1tj4")
+
+[node name="shadow_group" parent="." instance=ExtResource("2_47hqg")]
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1

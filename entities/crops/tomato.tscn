@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cn0dpd0qladq5"]
+[gd_scene load_steps=5 format=3 uid="uid://cn0dpd0qladq5"]
 
 [ext_resource type="Script" path="res://scripts/plant.gd" id="1_cco08"]
 [ext_resource type="SpriteFrames" uid="uid://drs5epwwebpfe" path="res://sprites/tomato_crop.aseprite" id="2_gydrm"]
+[ext_resource type="PackedScene" uid="uid://dj5bj87uyua4m" path="res://shadow.tscn" id="3_duwxh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6mrn"]
 size = Vector2(14.5, 5)
@@ -39,3 +40,7 @@ metadata/_aseprite_wizard_source_file_hash_ = "0bb405b41600d07bfd648c73ec975cec"
 metadata/_aseprite_wizard_interface_config_ = {
 "output_section": true
 }
+
+[node name="shadow" parent="." instance=ExtResource("3_duwxh")]
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(0.169922, 0.375)

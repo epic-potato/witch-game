@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://besy82ei5saeb"]
+
+[ext_resource type="Script" path="res://shadow_group.gd" id="1_fw60r"]
+
+[node name="shadow_group" type="CanvasGroup"]
+self_modulate = Color(1, 1, 1, 0.2)
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("1_fw60r")

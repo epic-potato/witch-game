@@ -212,13 +212,11 @@ func _process(dt: float) -> void:
 	match facing:
 		Face.RIGHT:
 			sprite.flip_h = true
-			sprite.offset.x = -4;
 			if tool != null:
 				tool.scale.x = -1
 				tool.position.x = 6
 		Face.LEFT:
 			sprite.flip_h = false
-			sprite.offset.x = 0;
 			if tool != null:
 				tool.scale.x = 1
 				tool.position.x = -10

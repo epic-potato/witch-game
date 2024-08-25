@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj5bj87uyua4m"]
+
+[ext_resource type="Texture2D" uid="uid://d1jwae1keqfcp" path="res://sprites/shadow.aseprite" id="1_1btar"]
+[ext_resource type="Script" path="res://shadow.gd" id="2_odly6"]
+
+[node name="shadow" type="Sprite2D"]
+z_index = -1
+position = Vector2(-0.5, 0.5)
+scale = Vector2(0.46875, 0.875)
+texture = ExtResource("1_1btar")
+script = ExtResource("2_odly6")

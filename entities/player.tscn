@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://cspe43pr2dloh"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_t6v4e"]
-[ext_resource type="SpriteFrames" uid="uid://btwnixm6vvcmi" path="res://sprites/witch_animations_v4.aseprite" id="2_8yed4"]
-[ext_resource type="Texture2D" uid="uid://dmovrcrc5mgr0" path="res://sprites/shadow.png" id="2_akb7e"]
+[ext_resource type="SpriteFrames" uid="uid://7ax48bksrh4l" path="res://sprites/witch.aseprite" id="3_i0qsd"]
 [ext_resource type="AudioStream" uid="uid://b1kbau4juy3v8" path="res://sounds/rustle.wav" id="4_o5xm2"]
 [ext_resource type="FontFile" uid="uid://c6o2n04gl288r" path="res://fonts/m3x6.ttf" id="6_jet3w"]
 [ext_resource type="PackedScene" uid="uid://dcvend5fjs46k" path="res://entities/guide.tscn" id="6_t55h6"]
+[ext_resource type="PackedScene" uid="uid://dj5bj87uyua4m" path="res://shadow.tscn" id="6_uxkie"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p30i6"]
 radius = 6.0
@@ -27,18 +27,13 @@ z_index = 1
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_p30i6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.5, 0)
-scale = Vector2(0.90625, 1)
-texture = ExtResource("2_akb7e")
-
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
-sprite_frames = ExtResource("2_8yed4")
+texture_repeat = 1
+sprite_frames = ExtResource("3_i0qsd")
 animation = &"idle_bounce"
-frame_progress = 0.453214
-offset = Vector2(2, -16)
+offset = Vector2(0, -23)
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
@@ -75,3 +70,8 @@ offset_bottom = -33.0
 label_settings = SubResource("LabelSettings_j6h2k")
 horizontal_alignment = 1
 vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="shadow" parent="." instance=ExtResource("6_uxkie")]
+position = Vector2(-3.57628e-07, 5.96046e-08)
+scale = Vector2(0.140625, 0.4375)

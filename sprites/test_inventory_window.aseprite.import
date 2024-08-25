@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://y8eukex5ro0"
+path="res://.godot/imported/test_inventory_window.aseprite-424e3d13a81c79d48f0321d57f864b05.res"
+
+[deps]
+
+source_file="res://sprites/test_inventory_window.aseprite"
+dest_files=["res://.godot/imported/test_inventory_window.aseprite-424e3d13a81c79d48f0321d57f864b05.res"]
+
+[params]
+

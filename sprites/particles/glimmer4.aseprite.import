@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://dig0tlwodnc8y"
+path="res://.godot/imported/glimmer4.aseprite-ca6cfb618d2f027de03ca698d54428b9.res"
+
+[deps]
+
+source_file="res://sprites/particles/glimmer4.aseprite"
+dest_files=["res://.godot/imported/glimmer4.aseprite-ca6cfb618d2f027de03ca698d54428b9.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

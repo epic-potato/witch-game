@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://e2i5b6epgqkp"]
+[gd_scene load_steps=5 format=3 uid="uid://e2i5b6epgqkp"]
 
 [ext_resource type="Script" path="res://scripts/foragable.gd" id="1_15m35"]
 [ext_resource type="SpriteFrames" uid="uid://cpndg86cj185k" path="res://sprites/red_cap.aseprite" id="2_ldgsb"]
+[ext_resource type="PackedScene" uid="uid://dj5bj87uyua4m" path="res://shadow.tscn" id="3_o343h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yrx7p"]
 radius = 5.09902
@@ -36,3 +37,7 @@ metadata/_aseprite_wizard_source_file_hash_ = "2bf77bf6de6fe8ff0a07b714bc1d55b8"
 metadata/_aseprite_wizard_interface_config_ = {
 "output_section": true
 }
+
+[node name="shadow" parent="." instance=ExtResource("3_o343h")]
+position = Vector2(-0.75, 0)
+scale = Vector2(0.0742188, 0.25)
